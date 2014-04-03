@@ -27,4 +27,6 @@ You should follow the instruction before you create a issue.
 
 Of course not. This is simply a parody, based on the troubles surrounding https://github.com/opencart/opencart/issues/1286.
 
+You can read how the whole shitshow went down here: https://gist.github.com/uppfinnarn/9956023
+
 Properly license your code, kids.
