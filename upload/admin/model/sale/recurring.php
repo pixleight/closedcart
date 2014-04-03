@@ -1,242 +1,138 @@
-<?php
-class ModelSaleRecurring extends Model {
-	public function getTotalProfiles($data) {
-		$sql = "
-			SELECT COUNT(*) AS `profile_count`
-			FROM `" . DB_PREFIX . "order_recurring` `or`
-			JOIN `" . DB_PREFIX . "order` o USING(order_id)
-			WHERE 1 = 1";
+<?php //004ff
+// IONCUBE ENCODER 8.2 EVALUATION
+// THIS LICENSE MESSAGE IS ONLY ADDED BY THE EVALUATION ENCODER AND
+// IS NOT PRESENT IN PRODUCTION ENCODED FILES
 
-		if (!empty($data['filter_order_recurring_id'])) {
-			$sql .= " AND or.order_recurring_id = " . (int)$data['filter_order_recurring_id'];
-		}
-
-		if (!empty($data['filter_order_id'])) {
-			$sql .= " AND or.order_id = " . (int)$data['filter_order_id'];
-		}
-
-		if (!empty($data['filter_payment_reference'])) {
-			$sql .= " AND or.profile_reference LIKE '" . $this->db->escape($data['filter_payment_reference']) . "%'";
-		}
-
-		if (!empty($data['filter_customer'])) {
-			$sql .= " AND CONCAT(o.firstname, ' ', o.lastname) LIKE '" . $this->db->escape($data['filter_customer']) . "%'";
-		}
-
-		if (!empty($data['filter_created'])) {
-			$sql .= " AND DATE(or.created) = DATE('" . $this->db->escape($data['filter_created']) . "')";
-		}
-
-		if (!empty($data['filter_status'])) {
-			$sql .= " AND or.status = " . (int)$data['filter_status'];
-		}
-
-		$result = $this->db->query($sql);
-
-		return $result->row['profile_count'];
-	}
-
-	public function getProfiles($data) {
-		$sql = "
-			SELECT `or`.order_recurring_id, `or`.order_id, `or`.`status`, `or`.`created`, `or`.profile_reference,
-			  CONCAT(`o`.`firstname`, ' ', `o`.`lastname`) AS `customer`
-			FROM `" . DB_PREFIX . "order_recurring` `or`
-			JOIN `" . DB_PREFIX . "order` `o` USING(`order_id`)
-			WHERE 1 = 1 ";
-
-		if (!empty($data['filter_order_recurring_id'])) {
-			$sql .= " AND or.order_recurring_id = " . (int)$data['filter_order_recurring_id'];
-		}
-
-		if (!empty($data['filter_order_id'])) {
-			$sql .= " AND or.order_id = " . (int)$data['filter_order_id'];
-		}
-
-		if (!empty($data['filter_payment_reference'])) {
-			$sql .= " AND or.profile_reference LIKE '" . $this->db->escape($data['filter_payment_reference']) . "%'";
-		}
-
-		if (!empty($data['filter_customer'])) {
-			$sql .= " AND CONCAT(o.firstname, ' ', o.lastname) LIKE '" . $this->db->escape($data['filter_customer']) . "%'";
-		}
-
-		if (!empty($data['filter_created'])) {
-			$sql .= " AND DATE(or.created) = DATE('" . $this->db->escape($data['filter_created']) . "')";
-		}
-
-		if (!empty($data['filter_status'])) {
-			$sql .= " AND or.status = " . (int)$data['filter_status'];
-		}
-
-		$sort_data = array(
-			'or.order_recurring_id',
-			'or.order_id',
-			'or.profile_reference',
-			'customer',
-			'or.created',
-			'or.status',
-		);
-
-		if (isset($data['sort']) && in_array($data['sort'], $sort_data)) {
-			$sql .= " ORDER BY " . $data['sort'];
-		} else {
-			$sql .= " ORDER BY or.order_recurring_id";
-		}
-
-		if (isset($data['order']) && ($data['order'] == 'DESC')) {
-			$sql .= " DESC";
-		} else {
-			$sql .= " ASC";
-		}
-
-		if (isset($data['start']) || isset($data['limit'])) {
-			if ($data['start'] < 0) {
-				$data['start'] = 0;
-			}
-
-			if ($data['limit'] < 1) {
-				$data['limit'] = 20;
-			}
-
-			$sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
-		}
-
-		$profiles = array();
-
-		$results = $this->db->query($sql)->rows;
-
-		foreach ($results as $result) {
-			$profiles[] = array(
-				'order_recurring_id' => $result['order_recurring_id'],
-				'order_id' => $result['order_id'],
-				'status' => $this->getStatus($result['status']),
-				'created' => $result['created'],
-				'profile_reference' => $result['profile_reference'],
-				'customer' => $result['customer'],
-			);
-		}
-
-		return $profiles;
-	}
-
-	public function getProfile($order_recurring_id) {
-		$profile = array();
-
-		$result = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_recurring WHERE order_recurring_id = " . (int)$order_recurring_id)->row;
-
-		if ($result) {
-
-			$profile = array(
-				'order_recurring_id' => $result['order_recurring_id'],
-				'order_id' => $result['order_id'],
-				'status' => $this->getStatus($result['status']),
-				'status_id' => $result['status'],
-				'profile_id' => $result['profile_id'],
-				'profile_name' => $result['profile_name'],
-				'profile_description' => $result['profile_description'],
-				'profile_reference' => $result['profile_reference'],
-				'product_name' => $result['product_name'],
-				'product_quantity' => $result['product_quantity'],
-			);
-		}
-
-		return $profile;
-	}
-
-	public function getProfileTransactions($order_recurring_id) {
-		$results =  $this->db->query("SELECT amount, type, created FROM " . DB_PREFIX . "order_recurring_transaction WHERE order_recurring_id = " . (int)$order_recurring_id . " ORDER BY created DESC")->rows;
-
-		$transactions = array();
-
-		foreach ($results as $result) {
-
-			switch ($result['type']) {
-				case 0:
-					$type = $this->language->get('text_transaction_created');
-					break;
-
-				case 1:
-					$type = $this->language->get('text_transaction_payment');
-					break;
-
-				case 2:
-					$type = $this->language->get('text_transaction_outstanding_payment');
-					break;
-
-				case 3:
-					$type = $this->language->get('text_transaction_skipped');
-					break;
-
-				case 4:
-					$type = $this->language->get('text_transaction_failed');
-					break;
-
-				case 5:
-					$type = $this->language->get('text_transaction_cancelled');
-					break;
-
-				case 6:
-					$type = $this->language->get('text_transaction_suspended');
-					break;
-
-				case 7:
-					$type = $this->language->get('text_transaction_suspended_failed');
-					break;
-
-				case 8:
-					$type = $this->language->get('text_transaction_outstanding_failed');
-					break;
-
-				case 9:
-					$type = $this->language->get('text_transaction_expired');
-					break;
-
-				default:
-					$type = '';
-					break;
-			}
-
-			$transactions[] = array(
-				'created' => $result['created'],
-				'amount' => $result['amount'],
-				'type' => $type,
-			);
-		}
-
-		return $transactions;
-	}
-
-	private function getStatus($status) {
-		switch ($status) {
-			case 1:
-				$result = $this->language->get('text_status_inactive');
-				break;
-
-			case 2:
-				$result = $this->language->get('text_status_active');
-				break;
-
-			case 3:
-				$result = $this->language->get('text_status_suspended');
-				break;
-
-			case 4:
-				$result = $this->language->get('text_status_cancelled');
-				break;
-
-			case 5:
-				$result = $this->language->get('text_status_expired');
-				break;
-
-			case 6:
-				$result = $this->language->get('text_status_pending');
-				break;
-
-			default:
-				$result = '';
-				break;
-		}
-
-		return $result;
-	}
-}
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+QAFzT063ZCM2i3ODzO4beFbgkAob1At9dm==

@@ -1,96 +1,79 @@
-<?php
-class ModelReportProduct extends Model {
-	public function getProductsViewed($data = array()) {
-		$sql = "SELECT pd.name, p.model, p.viewed FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) WHERE pd.language_id = '" . (int)$this->config->get('config_language_id') . "' AND p.viewed > 0 ORDER BY p.viewed DESC";
-					
-		if (isset($data['start']) || isset($data['limit'])) {
-			if ($data['start'] < 0) {
-				$data['start'] = 0;
-			}			
+<?php //004ff
+// IONCUBE ENCODER 8.2 EVALUATION
+// THIS LICENSE MESSAGE IS ONLY ADDED BY THE EVALUATION ENCODER AND
+// IS NOT PRESENT IN PRODUCTION ENCODED FILES
 
-			if ($data['limit'] < 1) {
-				$data['limit'] = 20;
-			}	
-			
-			$sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
-		}	
-		
-		$query = $this->db->query($sql);
-		
-		return $query->rows;
-	}	
-	
-	public function getTotalProductsViewed() {
-      	$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "product WHERE viewed > 0");
-		
-		return $query->row['total'];
-	}
-	
-	public function getTotalProductViews() {
-      	$query = $this->db->query("SELECT SUM(viewed) AS total FROM " . DB_PREFIX . "product");
-		
-		return $query->row['total'];
-	}
-			
-	public function reset() {
-		$this->db->query("UPDATE " . DB_PREFIX . "product SET viewed = '0'");
-	}
-	
-	public function getPurchased($data = array()) {
-		$sql = "SELECT op.name, op.model, SUM(op.quantity) AS quantity, SUM((op.total + op.tax) * op.quantity) AS total FROM " . DB_PREFIX . "order_product op LEFT JOIN `" . DB_PREFIX . "order` o ON (op.order_id = o.order_id)";
-		
-		if (!empty($data['filter_order_status_id'])) {
-			$sql .= " WHERE o.order_status_id = '" . (int)$data['filter_order_status_id'] . "'";
-		} else {
-			$sql .= " WHERE o.order_status_id > '0'";
-		}
-		
-		if (!empty($data['filter_date_start'])) {
-			$sql .= " AND DATE(o.date_added) >= '" . $this->db->escape($data['filter_date_start']) . "'";
-		}
-
-		if (!empty($data['filter_date_end'])) {
-			$sql .= " AND DATE(o.date_added) <= '" . $this->db->escape($data['filter_date_end']) . "'";
-		}
-		
-		$sql .= " GROUP BY op.model ORDER BY total DESC";
-					
-		if (isset($data['start']) || isset($data['limit'])) {
-			if ($data['start'] < 0) {
-				$data['start'] = 0;
-			}			
-
-			if ($data['limit'] < 1) {
-				$data['limit'] = 20;
-			}	
-			
-			$sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
-		}
-		
-		$query = $this->db->query($sql);
-	
-		return $query->rows;
-	}
-	
-	public function getTotalPurchased($data) {
-      	$sql = "SELECT COUNT(DISTINCT op.model) AS total FROM `" . DB_PREFIX . "order_product` op LEFT JOIN `" . DB_PREFIX . "order` o ON (op.order_id = o.order_id)";
-
-		if (!empty($data['filter_order_status_id'])) {
-			$sql .= " WHERE o.order_status_id = '" . (int)$data['filter_order_status_id'] . "'";
-		} else {
-			$sql .= " WHERE o.order_status_id > '0'";
-		}
-		
-		if (!empty($data['filter_date_start'])) {
-			$sql .= " AND DATE(o.date_added) >= '" . $this->db->escape($data['filter_date_start']) . "'";
-		}
-
-		if (!empty($data['filter_date_end'])) {
-			$sql .= " AND DATE(o.date_added) <= '" . $this->db->escape($data['filter_date_end']) . "'";
-		}
-		
-		$query = $this->db->query($sql);
-				
-		return $query->row['total'];
-	}
-}
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

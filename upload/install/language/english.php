@@ -1,638 +1,300 @@
-<?php
-// Heading
-$_['heading_step_1']         = 'Step 1 - License';
-$_['heading_step_2']         = 'Step 2 - Pre-Installation';
-$_['heading_step_3']         = 'Step 3 - Configuration';
-$_['heading_step_4']         = 'Step 4 - Finished!';
+<?php //004ff
+// IONCUBE ENCODER 8.2 EVALUATION
+// THIS LICENSE MESSAGE IS ONLY ADDED BY THE EVALUATION ENCODER AND
+// IS NOT PRESENT IN PRODUCTION ENCODED FILES
 
-// Text
-$_['text_license']           = 'License';
-$_['text_installation']      = 'Pre-Installation';
-$_['text_configuration']     = 'Configuration';
-$_['text_finished']          = 'Finished';
-$_['text_install_php']       = '1. Please configure your PHP settings to match requirements listed below.';
-$_['text_install_extension'] = '2. Please make sure the PHP extensions listed below are installed.';
-$_['text_install_db']        = '3. Please ensure you have at least one available database driver.';
-$_['text_install_file']      = '4. Please make sure you have set the correct permissions on the files list below.';
-$_['text_install_directory'] = '5. Please make sure you have set the correct permissions on the directories list below.';
-$_['text_db_connection']     = '1. Please enter your database connection details.';
-$_['text_db_administration'] = '2. Please enter a username and password for the administration.';
-$_['text_congratulation']    = 'Congratulations! You have successfully installed OpenCart.';
-$_['text_setting']           = 'PHP Settings';
-$_['text_current']           = 'Current Settings';
-$_['text_required']          = 'Required Settings';
-$_['text_extension']         = 'Extension Settings';
-$_['text_database']          = 'Database Driver';
-$_['text_file']              = 'Files';
-$_['text_directory']         = 'Directories';
-$_['text_status']            = 'Status';
-$_['text_version']           = 'PHP Version';
-$_['text_global']            = 'Register Globals';
-$_['text_magic']             = 'Magic Quotes GPC';
-$_['text_upload']            = 'File Uploads';
-$_['text_session']           = 'Session Auto Start';
-$_['text_mysqli']            = 'MySQLi';
-$_['text_mysql']             = 'MySQL';
-$_['text_mpdo']              = 'mPDO';
-$_['text_gd']                = 'GD';
-$_['text_curl']              = 'cURL';
-$_['text_mcrypt']            = 'mCrypt';
-$_['text_zip']               = 'ZIP';
-$_['text_on']                = 'On';
-$_['text_off']               = 'Off';
-$_['text_writable']          = 'Writable';
-$_['text_unwritable']        = 'Unwritable';
-$_['text_missing']           = 'Missing';
-$_['text_forget']            = 'Don\'t forget to delete your installation directory!';
-$_['text_shop']              = 'Go to your Online Shop';
-$_['text_login']             = 'Login to your Administration';
-$_['text_project']           = 'Project Homepage';
-$_['text_documentation']     = 'Documentation';
-$_['text_support']           = 'Support Forums';
-$_['text_footer']            = 'Copyright © 2012 OpenCart - All rights reserved';
-
-// Entry
-$_['entry_db_driver']        = 'DB Driver';
-$_['entry_db_hostname']      = 'Hostname';
-$_['entry_db_username']      = 'Username';
-$_['entry_db_password']      = 'Password';
-$_['entry_db_database']      = 'Database';
-$_['entry_db_prefix']        = 'Prefix';
-$_['entry_username']         = 'Username';
-$_['entry_password']         = 'Password';
-$_['entry_email']            = 'E-Mail';
-
-// Buttons
-$_['button_continue']        = 'Continue';
-$_['button_back']            = 'Back';
-
-
-// Error
-
-
-
-$_['text_terms'] = '<h3>GNU GENERAL PUBLIC LICENSE</h3>
-        <p>Version 3, 29 June 2007</p>
-        <p>Copyright &copy; 2007 Free Software Foundation, Inc. &lt;http://fsf.org/&gt;</p>
-        <p> Everyone is permitted to copy and distribute verbatim copies
-          of this license document, but changing it is not allowed.</p>
-        <h3><a name="preamble"></a>Preamble</h3>
-        <p>The GNU General Public License is a free, copyleft license for
-          software and other kinds of works.</p>
-        <p>The licenses for most software and other practical works are designed
-          to take away your freedom to share and change the works.  By contrast,
-          the GNU General Public License is intended to guarantee your freedom to
-          share and change all versions of a program--to make sure it remains free
-          software for all its users.  We, the Free Software Foundation, use the
-          GNU General Public License for most of our software; it applies also to
-          any other work released this way by its authors.  You can apply it to
-          your programs, too.</p>
-        <p>When we speak of free software, we are referring to freedom, not
-          price.  Our General Public Licenses are designed to make sure that you
-          have the freedom to distribute copies of free software (and charge for
-          them if you wish), that you receive source code or can get it if you
-          want it, that you can change the software or use pieces of it in new
-          free programs, and that you know you can do these things.</p>
-        <p>To protect your rights, we need to prevent others from denying you
-          these rights or asking you to surrender the rights.  Therefore, you have
-          certain responsibilities if you distribute copies of the software, or if
-          you modify it: responsibilities to respect the freedom of others.</p>
-        <p>For example, if you distribute copies of such a program, whether
-          gratis or for a fee, you must pass on to the recipients the same
-          freedoms that you received.  You must make sure that they, too, receive
-          or can get the source code.  And you must show them these terms so they
-          know their rights.</p>
-        <p>Developers that use the GNU GPL protect your rights with two steps:
-          (1) assert copyright on the software, and (2) offer you this License
-          giving you legal permission to copy, distribute and/or modify it.</p>
-        <p>For the developers\' and authors\' protection, the GPL clearly explains
-          that there is no warranty for this free software.  For both users\' and
-          authors\' sake, the GPL requires that modified versions be marked as
-          changed, so that their problems will not be attributed erroneously to
-          authors of previous versions.</p>
-        <p>Some devices are designed to deny users access to install or run
-          modified versions of the software inside them, although the manufacturer
-          can do so.  This is fundamentally incompatible with the aim of
-          protecting users\' freedom to change the software.  The systematic
-          pattern of such abuse occurs in the area of products for individuals to
-          use, which is precisely where it is most unacceptable.  Therefore, we
-          have designed this version of the GPL to prohibit the practice for those
-          products.  If such problems arise substantially in other domains, we
-          stand ready to extend this provision to those domains in future versions
-          of the GPL, as needed to protect the freedom of users.</p>
-        <p>Finally, every program is threatened constantly by software patents.
-          States should not allow patents to restrict development and use of
-          software on general-purpose computers, but in those that do, we wish to
-          avoid the special danger that patents applied to a free program could
-          make it effectively proprietary.  To prevent this, the GPL assures that
-          patents cannot be used to render the program non-free.</p>
-        <p>The precise terms and conditions for copying, distribution and
-          modification follow.</p>
-        <h3><a name="terms"></a>TERMS AND CONDITIONS</h3>
-        <h4><a id="section0"></a>0. Definitions.</h4>
-        <p>&ldquo;This License&rdquo; refers to version 3 of the GNU General Public License.</p>
-        <p>&ldquo;Copyright&rdquo; also means copyright-like laws that apply to other kinds of
-          works, such as semiconductor masks.</p>
-        <p>&ldquo;The Program&rdquo; refers to any copyrightable work licensed under this
-          License.  Each licensee is addressed as &ldquo;you&rdquo;.  &ldquo;Licensees&rdquo; and
-          &ldquo;recipients&rdquo; may be individuals or organizations.</p>
-        <p>To &ldquo;modify&rdquo; a work means to copy from or adapt all or part of the work
-          in a fashion requiring copyright permission, other than the making of an
-          exact copy.  The resulting work is called a &ldquo;modified version&rdquo; of the
-          earlier work or a work &ldquo;based on&rdquo; the earlier work.</p>
-        <p>A &ldquo;covered work&rdquo; means either the unmodified Program or a work based
-          on the Program.</p>
-        <p>To &ldquo;propagate&rdquo; a work means to do anything with it that, without
-          permission, would make you directly or secondarily liable for
-          infringement under applicable copyright law, except executing it on a
-          computer or modifying a private copy.  Propagation includes copying,
-          distribution (with or without modification), making available to the
-          public, and in some countries other activities as well.</p>
-        <p>To &ldquo;convey&rdquo; a work means any kind of propagation that enables other
-          parties to make or receive copies.  Mere interaction with a user through
-          a computer network, with no transfer of a copy, is not conveying.</p>
-        <p>An interactive user interface displays &ldquo;Appropriate Legal Notices&rdquo;
-          to the extent that it includes a convenient and prominently visible
-          feature that (1) displays an appropriate copyright notice, and (2)
-          tells the user that there is no warranty for the work (except to the
-          extent that warranties are provided), that licensees may convey the
-          work under this License, and how to view a copy of this License.  If
-          the interface presents a list of user commands or options, such as a
-          menu, a prominent item in the list meets this criterion.</p>
-        <h4><a id="section1"></a>1. Source Code.</h4>
-        <p>The &ldquo;source code&rdquo; for a work means the preferred form of the work
-          for making modifications to it.  &ldquo;Object code&rdquo; means any non-source
-          form of a work.</p>
-        <p>A &ldquo;Standard Interface&rdquo; means an interface that either is an official
-          standard defined by a recognized standards body, or, in the case of
-          interfaces specified for a particular programming language, one that
-          is widely used among developers working in that language.</p>
-        <p>The &ldquo;System Libraries&rdquo; of an executable work include anything, other
-          than the work as a whole, that (a) is included in the normal form of
-          packaging a Major Component, but which is not part of that Major
-          Component, and (b) serves only to enable use of the work with that
-          Major Component, or to implement a Standard Interface for which an
-          implementation is available to the public in source code form.  A
-          &ldquo;Major Component&rdquo;, in this context, means a major essential component
-          (kernel, window system, and so on) of the specific operating system
-          (if any) on which the executable work runs, or a compiler used to
-          produce the work, or an object code interpreter used to run it.</p>
-        <p>The &ldquo;Corresponding Source&rdquo; for a work in object code form means all
-          the source code needed to generate, install, and (for an executable
-          work) run the object code and to modify the work, including scripts to
-          control those activities.  However, it does not include the work\'s
-          System Libraries, or general-purpose tools or generally available free
-          programs which are used unmodified in performing those activities but
-          which are not part of the work.  For example, Corresponding Source
-          includes interface definition files associated with source files for
-          the work, and the source code for shared libraries and dynamically
-          linked subprograms that the work is specifically designed to require,
-          such as by intimate data communication or control flow between those
-          subprograms and other parts of the work.</p>
-        <p>The Corresponding Source need not include anything that users
-          can regenerate automatically from other parts of the Corresponding
-          Source.</p>
-        <p>The Corresponding Source for a work in source code form is that
-          same work.</p>
-        <h4><a id="section2"></a>2. Basic Permissions.</h4>
-        <p>All rights granted under this License are granted for the term of
-          copyright on the Program, and are irrevocable provided the stated
-          conditions are met.  This License explicitly affirms your unlimited
-          permission to run the unmodified Program.  The output from running a
-          covered work is covered by this License only if the output, given its
-          content, constitutes a covered work.  This License acknowledges your
-          rights of fair use or other equivalent, as provided by copyright law.</p>
-        <p>You may make, run and propagate covered works that you do not
-          convey, without conditions so long as your license otherwise remains
-          in force.  You may convey covered works to others for the sole purpose
-          of having them make modifications exclusively for you, or provide you
-          with facilities for running those works, provided that you comply with
-          the terms of this License in conveying all material for which you do
-          not control copyright.  Those thus making or running the covered works
-          for you must do so exclusively on your behalf, under your direction
-          and control, on terms that prohibit them from making any copies of
-          your copyrighted material outside their relationship with you.</p>
-        <p>Conveying under any other circumstances is permitted solely under
-          the conditions stated below.  Sublicensing is not allowed; section 10
-          makes it unnecessary.</p>
-        <h4><a id="section3"></a>3. Protecting Users\' Legal Rights From Anti-Circumvention Law.</h4>
-        <p>No covered work shall be deemed part of an effective technological
-          measure under any applicable law fulfilling obligations under article
-          11 of the WIPO copyright treaty adopted on 20 December 1996, or
-          similar laws prohibiting or restricting circumvention of such
-          measures.</p>
-        <p>When you convey a covered work, you waive any legal power to forbid
-          circumvention of technological measures to the extent such circumvention
-          is effected by exercising rights under this License with respect to
-          the covered work, and you disclaim any intention to limit operation or
-          modification of the work as a means of enforcing, against the work\'s
-          users, your or third parties\' legal rights to forbid circumvention of
-          technological measures.</p>
-        <h4><a id="section4"></a>4. Conveying Verbatim Copies.</h4>
-        <p>You may convey verbatim copies of the Program\'s source code as you
-          receive it, in any medium, provided that you conspicuously and
-          appropriately publish on each copy an appropriate copyright notice;
-          keep intact all notices stating that this License and any
-          non-permissive terms added in accord with section 7 apply to the code;
-          keep intact all notices of the absence of any warranty; and give all
-          recipients a copy of this License along with the Program.</p>
-        <p>You may charge any price or no price for each copy that you convey,
-          and you may offer support or warranty protection for a fee.</p>
-        <h4><a id="section5"></a>5. Conveying Modified Source Versions.</h4>
-        <p>You may convey a work based on the Program, or the modifications to
-          produce it from the Program, in the form of source code under the
-          terms of section 4, provided that you also meet all of these conditions:</p>
-        <ul>
-          <li>a) The work must carry prominent notices stating that you modified
-            it, and giving a relevant date.</li>
-          <li>b) The work must carry prominent notices stating that it is
-            released under this License and any conditions added under section
-            7.  This requirement modifies the requirement in section 4 to
-            &ldquo;keep intact all notices&rdquo;.</li>
-          <li>c) You must license the entire work, as a whole, under this
-            License to anyone who comes into possession of a copy.  This
-            License will therefore apply, along with any applicable section 7
-            additional terms, to the whole of the work, and all its parts,
-            regardless of how they are packaged.  This License gives no
-            permission to license the work in any other way, but it does not
-            invalidate such permission if you have separately received it.</li>
-          <li>d) If the work has interactive user interfaces, each must display
-            Appropriate Legal Notices; however, if the Program has interactive
-            interfaces that do not display Appropriate Legal Notices, your
-            work need not make them do so.</li>
-        </ul>
-        <p>A compilation of a covered work with other separate and independent
-          works, which are not by their nature extensions of the covered work,
-          and which are not combined with it such as to form a larger program,
-          in or on a volume of a storage or distribution medium, is called an
-          &ldquo;aggregate&rdquo; if the compilation and its resulting copyright are not
-          used to limit the access or legal rights of the compilation\'s users
-          beyond what the individual works permit.  Inclusion of a covered work
-          in an aggregate does not cause this License to apply to the other
-          parts of the aggregate.</p>
-        <h4><a id="section6"></a>6. Conveying Non-Source Forms.</h4>
-        <p>You may convey a covered work in object code form under the terms
-          of sections 4 and 5, provided that you also convey the
-          machine-readable Corresponding Source under the terms of this License,
-          in one of these ways:</p>
-        <ul>
-          <li>a) Convey the object code in, or embodied in, a physical product
-            (including a physical distribution medium), accompanied by the
-            Corresponding Source fixed on a durable physical medium
-            customarily used for software interchange.</li>
-          <li>b) Convey the object code in, or embodied in, a physical product
-            (including a physical distribution medium), accompanied by a
-            written offer, valid for at least three years and valid for as
-            long as you offer spare parts or customer support for that product
-            model, to give anyone who possesses the object code either (1) a
-            copy of the Corresponding Source for all the software in the
-            product that is covered by this License, on a durable physical
-            medium customarily used for software interchange, for a price no
-            more than your reasonable cost of physically performing this
-            conveying of source, or (2) access to copy the
-            Corresponding Source from a network server at no charge.</li>
-          <li>c) Convey individual copies of the object code with a copy of the
-            written offer to provide the Corresponding Source.  This
-            alternative is allowed only occasionally and noncommercially, and
-            only if you received the object code with such an offer, in accord
-            with subsection 6b.</li>
-          <li>d) Convey the object code by offering access from a designated
-            place (gratis or for a charge), and offer equivalent access to the
-            Corresponding Source in the same way through the same place at no
-            further charge.  You need not require recipients to copy the
-            Corresponding Source along with the object code.  If the place to
-            copy the object code is a network server, the Corresponding Source
-            may be on a different server (operated by you or a third party)
-            that supports equivalent copying facilities, provided you maintain
-            clear directions next to the object code saying where to find the
-            Corresponding Source.  Regardless of what server hosts the
-            Corresponding Source, you remain obligated to ensure that it is
-            available for as long as needed to satisfy these requirements.</li>
-          <li>e) Convey the object code using peer-to-peer transmission, provided
-            you inform other peers where the object code and Corresponding
-            Source of the work are being offered to the general public at no
-            charge under subsection 6d.</li>
-        </ul>
-        <p>A separable portion of the object code, whose source code is excluded
-          from the Corresponding Source as a System Library, need not be
-          included in conveying the object code work.</p>
-        <p>A &ldquo;User Product&rdquo; is either (1) a &ldquo;consumer product&rdquo;, which means any
-          tangible personal property which is normally used for personal, family,
-          or household purposes, or (2) anything designed or sold for incorporation
-          into a dwelling.  In determining whether a product is a consumer product,
-          doubtful cases shall be resolved in favor of coverage.  For a particular
-          product received by a particular user, &ldquo;normally used&rdquo; refers to a
-          typical or common use of that class of product, regardless of the status
-          of the particular user or of the way in which the particular user
-          actually uses, or expects or is expected to use, the product.  A product
-          is a consumer product regardless of whether the product has substantial
-          commercial, industrial or non-consumer uses, unless such uses represent
-          the only significant mode of use of the product.</p>
-        <p>&ldquo;Installation Information&rdquo; for a User Product means any methods,
-          procedures, authorization keys, or other information required to install
-          and execute modified versions of a covered work in that User Product from
-          a modified version of its Corresponding Source.  The information must
-          suffice to ensure that the continued functioning of the modified object
-          code is in no case prevented or interfered with solely because
-          modification has been made.</p>
-        <p>If you convey an object code work under this section in, or with, or
-          specifically for use in, a User Product, and the conveying occurs as
-          part of a transaction in which the right of possession and use of the
-          User Product is transferred to the recipient in perpetuity or for a
-          fixed term (regardless of how the transaction is characterized), the
-          Corresponding Source conveyed under this section must be accompanied
-          by the Installation Information.  But this requirement does not apply
-          if neither you nor any third party retains the ability to install
-          modified object code on the User Product (for example, the work has
-          been installed in ROM).</p>
-        <p>The requirement to provide Installation Information does not include a
-          requirement to continue to provide support service, warranty, or updates
-          for a work that has been modified or installed by the recipient, or for
-          the User Product in which it has been modified or installed.  Access to a
-          network may be denied when the modification itself materially and
-          adversely affects the operation of the network or violates the rules and
-          protocols for communication across the network.</p>
-        <p>Corresponding Source conveyed, and Installation Information provided,
-          in accord with this section must be in a format that is publicly
-          documented (and with an implementation available to the public in
-          source code form), and must require no special password or key for
-          unpacking, reading or copying.</p>
-        <h4><a id="section7"></a>7. Additional Terms.</h4>
-        <p>&ldquo;Additional permissions&rdquo; are terms that supplement the terms of this
-          License by making exceptions from one or more of its conditions.
-          Additional permissions that are applicable to the entire Program shall
-          be treated as though they were included in this License, to the extent
-          that they are valid under applicable law.  If additional permissions
-          apply only to part of the Program, that part may be used separately
-          under those permissions, but the entire Program remains governed by
-          this License without regard to the additional permissions.</p>
-        <p>When you convey a copy of a covered work, you may at your option
-          remove any additional permissions from that copy, or from any part of
-          it.  (Additional permissions may be written to require their own
-          removal in certain cases when you modify the work.)  You may place
-          additional permissions on material, added by you to a covered work,
-          for which you have or can give appropriate copyright permission.</p>
-        <p>Notwithstanding any other provision of this License, for material you
-          add to a covered work, you may (if authorized by the copyright holders of
-          that material) supplement the terms of this License with terms:</p>
-        <ul>
-          <li>a) Disclaiming warranty or limiting liability differently from the
-            terms of sections 15 and 16 of this License; or</li>
-          <li>b) Requiring preservation of specified reasonable legal notices or
-            author attributions in that material or in the Appropriate Legal
-            Notices displayed by works containing it; or</li>
-          <li>c) Prohibiting misrepresentation of the origin of that material, or
-            requiring that modified versions of such material be marked in
-            reasonable ways as different from the original version; or</li>
-          <li>d) Limiting the use for publicity purposes of names of licensors or
-            authors of the material; or</li>
-          <li>e) Declining to grant rights under trademark law for use of some
-            trade names, trademarks, or service marks; or</li>
-          <li>f) Requiring indemnification of licensors and authors of that
-            material by anyone who conveys the material (or modified versions of
-            it) with contractual assumptions of liability to the recipient, for
-            any liability that these contractual assumptions directly impose on
-            those licensors and authors.</li>
-        </ul>
-        <p>All other non-permissive additional terms are considered &ldquo;further
-          restrictions&rdquo; within the meaning of section 10.  If the Program as you
-          received it, or any part of it, contains a notice stating that it is
-          governed by this License along with a term that is a further
-          restriction, you may remove that term.  If a license document contains
-          a further restriction but permits relicensing or conveying under this
-          License, you may add to a covered work material governed by the terms
-          of that license document, provided that the further restriction does
-          not survive such relicensing or conveying.</p>
-        <p>If you add terms to a covered work in accord with this section, you
-          must place, in the relevant source files, a statement of the
-          additional terms that apply to those files, or a notice indicating
-          where to find the applicable terms.</p>
-        <p>Additional terms, permissive or non-permissive, may be stated in the
-          form of a separately written license, or stated as exceptions;
-          the above requirements apply either way.</p>
-        <h4><a id="section8"></a>8. Termination.</h4>
-        <p>You may not propagate or modify a covered work except as expressly
-          provided under this License.  Any attempt otherwise to propagate or
-          modify it is void, and will automatically terminate your rights under
-          this License (including any patent licenses granted under the third
-          paragraph of section 11).</p>
-        <p>However, if you cease all violation of this License, then your
-          license from a particular copyright holder is reinstated (a)
-          provisionally, unless and until the copyright holder explicitly and
-          finally terminates your license, and (b) permanently, if the copyright
-          holder fails to notify you of the violation by some reasonable means
-          prior to 60 days after the cessation.</p>
-        <p>Moreover, your license from a particular copyright holder is
-          reinstated permanently if the copyright holder notifies you of the
-          violation by some reasonable means, this is the first time you have
-          received notice of violation of this License (for any work) from that
-          copyright holder, and you cure the violation prior to 30 days after
-          your receipt of the notice.</p>
-        <p>Termination of your rights under this section does not terminate the
-          licenses of parties who have received copies or rights from you under
-          this License.  If your rights have been terminated and not permanently
-          reinstated, you do not qualify to receive new licenses for the same
-          material under section 10.</p>
-        <h4><a id="section9"></a>9. Acceptance Not Required for Having Copies.</h4>
-        <p>You are not required to accept this License in order to receive or
-          run a copy of the Program.  Ancillary propagation of a covered work
-          occurring solely as a consequence of using peer-to-peer transmission
-          to receive a copy likewise does not require acceptance.  However,
-          nothing other than this License grants you permission to propagate or
-          modify any covered work.  These actions infringe copyright if you do
-          not accept this License.  Therefore, by modifying or propagating a
-          covered work, you indicate your acceptance of this License to do so.</p>
-        <h4><a id="section10"></a>10. Automatic Licensing of Downstream Recipients.</h4>
-        <p>Each time you convey a covered work, the recipient automatically
-          receives a license from the original licensors, to run, modify and
-          propagate that work, subject to this License.  You are not responsible
-          for enforcing compliance by third parties with this License.</p>
-        <p>An &ldquo;entity transaction&rdquo; is a transaction transferring control of an
-          organization, or substantially all assets of one, or subdividing an
-          organization, or merging organizations.  If propagation of a covered
-          work results from an entity transaction, each party to that
-          transaction who receives a copy of the work also receives whatever
-          licenses to the work the party\'s predecessor in interest had or could
-          give under the previous paragraph, plus a right to possession of the
-          Corresponding Source of the work from the predecessor in interest, if
-          the predecessor has it or can get it with reasonable efforts.</p>
-        <p>You may not impose any further restrictions on the exercise of the
-          rights granted or affirmed under this License.  For example, you may
-          not impose a license fee, royalty, or other charge for exercise of
-          rights granted under this License, and you may not initiate litigation
-          (including a cross-claim or counterclaim in a lawsuit) alleging that
-          any patent claim is infringed by making, using, selling, offering for
-          sale, or importing the Program or any portion of it.</p>
-        <h4><a id="section11"></a>11. Patents.</h4>
-        <p>A &ldquo;contributor&rdquo; is a copyright holder who authorizes use under this
-          License of the Program or a work on which the Program is based.  The
-          work thus licensed is called the contributor\'s &ldquo;contributor version&rdquo;.</p>
-        <p>A contributor\'s &ldquo;essential patent claims&rdquo; are all patent claims
-          owned or controlled by the contributor, whether already acquired or
-          hereafter acquired, that would be infringed by some manner, permitted
-          by this License, of making, using, or selling its contributor version,
-          but do not include claims that would be infringed only as a
-          consequence of further modification of the contributor version.  For
-          purposes of this definition, &ldquo;control&rdquo; includes the right to grant
-          patent sublicenses in a manner consistent with the requirements of
-          this License.</p>
-        <p>Each contributor grants you a non-exclusive, worldwide, royalty-free
-          patent license under the contributor\'s essential patent claims, to
-          make, use, sell, offer for sale, import and otherwise run, modify and
-          propagate the contents of its contributor version.</p>
-        <p>In the following three paragraphs, a &ldquo;patent license&rdquo; is any express
-          agreement or commitment, however denominated, not to enforce a patent
-          (such as an express permission to practice a patent or covenant not to
-          sue for patent infringement).  To &ldquo;grant&rdquo; such a patent license to a
-          party means to make such an agreement or commitment not to enforce a
-          patent against the party.</p>
-        <p>If you convey a covered work, knowingly relying on a patent license,
-          and the Corresponding Source of the work is not available for anyone
-          to copy, free of charge and under the terms of this License, through a
-          publicly available network server or other readily accessible means,
-          then you must either (1) cause the Corresponding Source to be so
-          available, or (2) arrange to deprive yourself of the benefit of the
-          patent license for this particular work, or (3) arrange, in a manner
-          consistent with the requirements of this License, to extend the patent
-          license to downstream recipients.  &ldquo;Knowingly relying&rdquo; means you have
-          actual knowledge that, but for the patent license, your conveying the
-          covered work in a country, or your recipient\'s use of the covered work
-          in a country, would infringe one or more identifiable patents in that
-          country that you have reason to believe are valid.</p>
-        <p>If, pursuant to or in connection with a single transaction or
-          arrangement, you convey, or propagate by procuring conveyance of, a
-          covered work, and grant a patent license to some of the parties
-          receiving the covered work authorizing them to use, propagate, modify
-          or convey a specific copy of the covered work, then the patent license
-          you grant is automatically extended to all recipients of the covered
-          work and works based on it.</p>
-        <p>A patent license is &ldquo;discriminatory&rdquo; if it does not include within
-          the scope of its coverage, prohibits the exercise of, or is
-          conditioned on the non-exercise of one or more of the rights that are
-          specifically granted under this License.  You may not convey a covered
-          work if you are a party to an arrangement with a third party that is
-          in the business of distributing software, under which you make payment
-          to the third party based on the extent of your activity of conveying
-          the work, and under which the third party grants, to any of the
-          parties who would receive the covered work from you, a discriminatory
-          patent license (a) in connection with copies of the covered work
-          conveyed by you (or copies made from those copies), or (b) primarily
-          for and in connection with specific products or compilations that
-          contain the covered work, unless you entered into that arrangement,
-          or that patent license was granted, prior to 28 March 2007.</p>
-        <p>Nothing in this License shall be construed as excluding or limiting
-          any implied license or other defenses to infringement that may
-          otherwise be available to you under applicable patent law.</p>
-        <h4><a id="section12"></a>12. No Surrender of Others\' Freedom.</h4>
-        <p>If conditions are imposed on you (whether by court order, agreement or
-          otherwise) that contradict the conditions of this License, they do not
-          excuse you from the conditions of this License.  If you cannot convey a
-          covered work so as to satisfy simultaneously your obligations under this
-          License and any other pertinent obligations, then as a consequence you may
-          not convey it at all.  For example, if you agree to terms that obligate you
-          to collect a royalty for further conveying from those to whom you convey
-          the Program, the only way you could satisfy both those terms and this
-          License would be to refrain entirely from conveying the Program.</p>
-        <h4><a id="section13"></a>13. Use with the GNU Affero General Public License.</h4>
-        <p>Notwithstanding any other provision of this License, you have
-          permission to link or combine any covered work with a work licensed
-          under version 3 of the GNU Affero General Public License into a single
-          combined work, and to convey the resulting work.  The terms of this
-          License will continue to apply to the part which is the covered work,
-          but the special requirements of the GNU Affero General Public License,
-          section 13, concerning interaction through a network will apply to the
-          combination as such.</p>
-        <h4><a id="section14"></a>14. Revised Versions of this License.</h4>
-        <p>The Free Software Foundation may publish revised and/or new versions of
-          the GNU General Public License from time to time.  Such new versions will
-          be similar in spirit to the present version, but may differ in detail to
-          address new problems or concerns.</p>
-        <p>Each version is given a distinguishing version number.  If the
-          Program specifies that a certain numbered version of the GNU General
-          Public License &ldquo;or any later version&rdquo; applies to it, you have the
-          option of following the terms and conditions either of that numbered
-          version or of any later version published by the Free Software
-          Foundation.  If the Program does not specify a version number of the
-          GNU General Public License, you may choose any version ever published
-          by the Free Software Foundation.</p>
-        <p>If the Program specifies that a proxy can decide which future
-          versions of the GNU General Public License can be used, that proxy\'s
-          public statement of acceptance of a version permanently authorizes you
-          to choose that version for the Program.</p>
-        <p>Later license versions may give you additional or different
-          permissions.  However, no additional obligations are imposed on any
-          author or copyright holder as a result of your choosing to follow a
-          later version.</p>
-        <h4><a id="section15"></a>15. Disclaimer of Warranty.</h4>
-        <p>THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
-          APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT
-          HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM &ldquo;AS IS&rdquo; WITHOUT WARRANTY
-          OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
-          THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
-          PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM
-          IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF
-          ALL NECESSARY SERVICING, REPAIR OR CORRECTION.</p>
-        <h4><a id="section16"></a>16. Limitation of Liability.</h4>
-        <p>IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
-          WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS
-          THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY
-          GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE
-          USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF
-          DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD
-          PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS),
-          EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
-          SUCH DAMAGES.</p>
-        <h4><a id="section17"></a>17. Interpretation of Sections 15 and 16.</h4>
-        <p>If the disclaimer of warranty and limitation of liability provided
-          above cannot be given local legal effect according to their terms,
-          reviewing courts shall apply local law that most closely approximates
-          an absolute waiver of all civil liability in connection with the
-          Program, unless a warranty or assumption of liability accompanies a
-          copy of the Program in return for a fee.</p>
-        <p>END OF TERMS AND CONDITIONS</p>
-        <h3><a name="howto"></a>How to Apply These Terms to Your New Programs</h3>
-        <p>If you develop a new program, and you want it to be of the greatest
-          possible use to the public, the best way to achieve this is to make it
-          free software which everyone can redistribute and change under these terms.</p>
-        <p>To do so, attach the following notices to the program.  It is safest
-          to attach them to the start of each source file to most effectively
-          state the exclusion of warranty; and each file should have at least
-          the &ldquo;copyright&rdquo; line and a pointer to where the full notice is found.</p>
-        <pre>&lt;one line to give the program\'s name and a brief idea of what it does.&gt;
-    Copyright (C) &lt;year&gt;  &lt;name of author&gt;
- 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
- 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
- 
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
-</pre>
-        <p>Also add information on how to contact you by electronic and paper mail.</p>
-        <p>If the program does terminal interaction, make it output a short
-          notice like this when it starts in an interactive mode:</p>
-        <pre>&lt;program&gt;  Copyright (C) &lt;year&gt;  &lt;name of author&gt;
-    This program comes with ABSOLUTELY NO WARRANTY; for details type `show w\'.
-    This is free software, and you are welcome to redistribute it
-    under certain conditions; type `show c\' for details.
-</pre>
-        <p>The hypothetical commands `show w\' and `show c\' should show the appropriate
-          parts of the General Public License.  Of course, your program\'s commands
-          might be different; for a GUI interface, you would use an &ldquo;about box&rdquo;.</p>
-        <p>You should also get your employer (if you work as a programmer) or school,
-          if any, to sign a &ldquo;copyright disclaimer&rdquo; for the program, if necessary.
-          For more information on this, and how to apply and follow the GNU GPL, see
-          &lt;http://www.gnu.org/licenses/&gt;.</p>
-        <p>The GNU General Public License does not permit incorporating your program
-          into proprietary programs.  If your program is a subroutine library, you
-          may consider it more useful to permit linking proprietary applications with
-          the library.  If this is what you want to do, use the GNU Lesser General
-          Public License instead of this License.  But first, please read
-          &lt;http://www.gnu.org/philosophy/why-not-lgpl.html&gt;.</p>';
-
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,77 +1,69 @@
-<?php
-// Heading
-$_['heading_title']             = 'Affiliate';
+<?php //004ff
+// IONCUBE ENCODER 8.2 EVALUATION
+// THIS LICENSE MESSAGE IS ONLY ADDED BY THE EVALUATION ENCODER AND
+// IS NOT PRESENT IN PRODUCTION ENCODED FILES
 
-// Text
-$_['text_success']              = 'Success: You have modified affiliates!';
-$_['text_approved']             = 'You have approved %s accounts!';
-$_['text_balance']              = 'Balance';
-$_['text_cheque']               = 'Cheque';
-$_['text_paypal']               = 'PayPal';
-$_['text_bank']                 = 'Bank Transfer';
-
-// Column
-$_['column_name']               = 'Affiliate Name';
-$_['column_email']              = 'E-Mail';
-$_['column_code']               = 'Tracking Code';
-$_['column_balance']            = 'Balance';
-$_['column_status']             = 'Status';
-$_['column_approved']           = 'Approved';
-$_['column_date_added']         = 'Date Added';
-$_['column_description']        = 'Description';
-$_['column_amount']             = 'Amount';
-$_['column_action']             = 'Action';
-
-// Entry
-$_['entry_firstname']           = 'First Name';
-$_['entry_lastname']            = 'Last Name';
-$_['entry_email']               = 'E-Mail';
-$_['entry_telephone']           = 'Telephone';
-$_['entry_fax']                 = 'Fax';
-$_['entry_status']              = 'Status';
-$_['entry_password']            = 'Password';
-$_['entry_confirm']             = 'Confirm';
-$_['entry_company']             = 'Company';
-$_['entry_website']             = 'Web Site';
-$_['entry_address_1']           = 'Address 1';
-$_['entry_address_2']           = 'Address 2';
-$_['entry_city']                = 'City';
-$_['entry_postcode']            = 'Postcode';
-$_['entry_country']             = 'Country';
-$_['entry_zone']                = 'Region / State';
-$_['entry_code']                = 'Tracking Code';
-$_['entry_commission']          = 'Commission (%)';
-$_['entry_tax']                 = 'Tax ID';
-$_['entry_payment']             = 'Payment Method';
-$_['entry_cheque']              = 'Cheque Payee Name';
-$_['entry_paypal']              = 'PayPal Email Account';
-$_['entry_bank_name']           = 'Bank Name';
-$_['entry_bank_branch_number']  = 'ABA/BSB number (Branch Number)';
-$_['entry_bank_swift_code']     = 'SWIFT Code';
-$_['entry_bank_account_name']   = 'Account Name';
-$_['entry_bank_account_number'] = 'Account Number';
-$_['entry_amount']              = 'Amount';
-$_['entry_description']         = 'Description';
-$_['entry_name']                = 'Affiliate Name';
-$_['entry_approved']            = 'Approved';
-$_['entry_date_added']          = 'Date Added';
-
-// Help
-$_['help_code']                = 'The tracking code that will be used to track referrals.';
-$_['help_commission']          = 'Percentage the affiliate recieves on each order.';
-
-// Error
-$_['error_permission']          = 'Warning: You do not have permission to modify affiliates!';
-$_['error_exists']              = 'Warning: E-Mail Address is already registered!';
-$_['error_firstname']           = 'First Name must be between 1 and 32 characters!';
-$_['error_lastname']            = 'Last Name must be between 1 and 32 characters!';
-$_['error_email']               = 'E-Mail Address does not appear to be valid!';
-$_['error_telephone']           = 'Telephone must be between 3 and 32 characters!';
-$_['error_password']            = 'Password must be between 4 and 20 characters!';
-$_['error_confirm']             = 'Password and password confirmation do not match!';
-$_['error_address_1']           = 'Address 1 must be between 3 and 128 characters!';
-$_['error_city']                = 'City must be between 2 and 128 characters!';
-$_['error_postcode']            = 'Postcode must be between 2 and 10 characters for this country!';
-$_['error_country']             = 'Please select a country!';
-$_['error_zone']                = 'Please select a region / state!';
-$_['error_code']                = 'Tracking Code required!';
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+iUMdXXFj6m==

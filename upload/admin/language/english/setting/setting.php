@@ -1,222 +1,214 @@
-<?php
-// Heading
-$_['heading_title']                = 'Settings';
+<?php //004ff
+// IONCUBE ENCODER 8.2 EVALUATION
+// THIS LICENSE MESSAGE IS ONLY ADDED BY THE EVALUATION ENCODER AND
+// IS NOT PRESENT IN PRODUCTION ENCODED FILES
 
-// Text
-$_['text_success']                 = 'Success: You have modified settings!';
-$_['text_product']                 = 'Products';
-$_['text_review']                  = 'Reviews';
-$_['text_voucher']                 = 'Vouchers';
-$_['text_tax']                     = 'Taxes';
-$_['text_account']                 = 'Account';
-$_['text_checkout']                = 'Checkout';
-$_['text_stock']                   = 'Stock';
-$_['text_affiliate']               = 'Affiliates';
-$_['text_return']                  = 'Returns';
-$_['text_shipping']                = 'Shipping Address';
-$_['text_payment']                 = 'Payment Address';
-$_['text_mail']                    = 'Mail';
-$_['text_smtp']                    = 'SMTP';
-
-// Entry
-$_['entry_name']                   = 'Store Name';
-$_['entry_owner']                  = 'Store Owner';
-$_['entry_address']                = 'Address';
-$_['entry_geocode']                = 'Geocode';
-$_['entry_email']                  = 'E-Mail';
-$_['entry_telephone']              = 'Telephone';
-$_['entry_fax']                    = 'Fax';
-$_['entry_image']                  = 'Image';
-$_['entry_open']                   = 'Opening Times';
-$_['entry_comment']                = 'Comment';
-$_['entry_location']               = 'Store Location';
-$_['entry_meta_title']             = 'Meta Title';
-$_['entry_meta_description']       = 'Meta Tag Description';
-$_['entry_layout']                 = 'Default Layout';
-$_['entry_template']               = 'Template';
-$_['entry_country']                = 'Country';
-$_['entry_zone']                   = 'Region / State';
-$_['entry_language']               = 'Language';
-$_['entry_admin_language']         = 'Administration Language';
-$_['entry_currency']               = 'Currency';
-$_['entry_currency_auto']          = 'Auto Update Currency';
-$_['entry_length_class']           = 'Length Class';
-$_['entry_weight_class']           = 'Weight Class';
-$_['entry_product_limit'] 	       = 'Default Items Per Page (Catalog)';
-$_['entry_product_description_length'] = 'List Description Limit (Catalog)';
-$_['entry_limit_admin']   	       = 'Default Items Per Page (Admin)';
-$_['entry_product_count']          = 'Category Product Count';
-$_['entry_review']       	       = 'Allow Reviews';
-$_['entry_review_guest']       	   = 'Allow Guest Reviews';
-$_['entry_review_mail']            = 'New Review Alert Mail';
-$_['entry_voucher_min']            = 'Voucher Min';
-$_['entry_voucher_max']            = 'Voucher Max';
-$_['entry_tax']                    = 'Display Prices With Tax';
-$_['entry_tax_default']            = 'Use Store Tax Address';
-$_['entry_tax_customer']           = 'Use Customer Tax Address';
-$_['entry_customer_online']        = 'Customers Online';
-$_['entry_customer_group']         = 'Customer Group';
-$_['entry_customer_group_display'] = 'Customer Groups';
-$_['entry_customer_price']         = 'Login Display Prices';
-$_['entry_account']                = 'Account Terms';
-$_['entry_account_mail']           = 'New Account Alert Mail';
-$_['entry_cart_weight']            = 'Display Weight on Cart Page';
-$_['entry_checkout_guest']         = 'Guest Checkout';
-$_['entry_checkout']               = 'Checkout Terms';
-$_['entry_order_edit']             = 'Order Editing';
-$_['entry_invoice_prefix']         = 'Invoice Prefix';
-$_['entry_order_status']           = 'Order Status';
-$_['entry_complete_status']        = 'Complete Order Status';
-$_['entry_order_mail']             = 'New Order Alert Mail';
-$_['entry_mail_alert']             = 'Additional Alert E-Mails';
-$_['entry_stock_display']          = 'Display Stock';
-$_['entry_stock_warning']          = 'Show Out Of Stock Warning';
-$_['entry_stock_checkout']         = 'Stock Checkout';
-$_['entry_stock_status']           = 'Out of Stock Status';
-$_['entry_affiliate_approval']     = 'Affiliate Requires Approval';
-$_['entry_affiliate_auto']         = 'Automatic Commission';
-$_['entry_affiliate_commission']   = 'Affiliate Commission (%)';
-$_['entry_affiliate']              = 'Affiliate Terms';
-$_['entry_affiliate_mail']         = 'New Affiliate Alert Mail';
-$_['entry_return']                 = 'Return Terms';
-$_['entry_return_status']          = 'Return Status';
-$_['entry_logo']                   = 'Store Logo';
-$_['entry_icon']                   = 'Icon';
-$_['entry_image_category']         = 'Category Image Size';
-$_['entry_image_thumb']            = 'Product Image Thumb Size';
-$_['entry_image_popup']            = 'Product Image Popup Size';
-$_['entry_image_product']          = 'Product Image List Size';
-$_['entry_image_additional']       = 'Additional Product Image Size';
-$_['entry_image_related']          = 'Related Product Image Size';
-$_['entry_image_compare']          = 'Compare Image Size';
-$_['entry_image_wishlist']         = 'Wish List Image Size';
-$_['entry_image_cart']             = 'Cart Image Size';
-$_['entry_image_location']         = 'Store Image Size';
-$_['entry_width']                  = 'Width';
-$_['entry_height']                 = 'Height';
-$_['entry_ftp_hostname']               = 'FTP Host';
-$_['entry_ftp_port']               = 'FTP Port';
-$_['entry_ftp_username']           = 'FTP Username';
-$_['entry_ftp_password']           = 'FTP Password';
-$_['entry_ftp_root']               = 'FTP Root';
-$_['entry_ftp_status']             = 'Enable FTP';
-$_['entry_mail_protocol']          = 'Mail Protocol';
-$_['entry_mail_parameter']         = 'Mail Parameters';
-$_['entry_smtp_hostname']          = 'SMTP Hostname';
-$_['entry_smtp_username']          = 'SMTP Username';
-$_['entry_smtp_password']          = 'SMTP Password';
-$_['entry_smtp_port']              = 'SMTP Port';
-$_['entry_smtp_timeout']           = 'SMTP Timeout';
-$_['entry_fraud_detection']        = 'Use MaxMind Fraud Detection System';
-$_['entry_fraud_key']              = 'MaxMind License Key';
-$_['entry_fraud_score']            = 'MaxMind Risk Score';
-$_['entry_fraud_status']           = 'MaxMind Fraud Order Status';
-$_['entry_secure']                 = 'Use SSL';
-$_['entry_shared']                 = 'Use Shared Sessions';
-$_['entry_robots']                 = 'Robots';
-$_['entry_seo_url']                = 'Use SEO URLs';
-$_['entry_image_file_size']		   = 'Image File Size';
-$_['entry_file_extension_allowed'] = 'Allowed File Extensions';
-$_['entry_file_mime_allowed']      = 'Allowed File Mime Types';
-$_['entry_maintenance']            = 'Maintenance Mode';
-$_['entry_password']               = 'Allow Forgotten Password';
-$_['entry_encryption']             = 'Encryption Key';
-$_['entry_compression']            = 'Output Compression Level';
-$_['entry_error_display']          = 'Display Errors';
-$_['entry_error_log']              = 'Log Errors';
-$_['entry_error_filename']         = 'Error Log Filename';
-$_['entry_google_analytics']       = 'Google Analytics Code';
-
-// Help
-$_['help_geocode']                 = 'Please enter your store location geocode manually.';
-$_['help_open']                    = 'Fill in your store\'s opening times.';
-$_['help_comment']                 = 'This field is for any special notes you would like to tell the customer i.e. Store does not accept cheques.';
-$_['help_location']                = 'The different store locations you have that you want displayed on the contact us form.';
-$_['help_currency']                = 'Change the default currency. Clear your browser cache to see the change and reset your existing cookie.';
-$_['help_currency_auto']           = 'Set your store to automatically update currencies daily.';
-$_['help_product_limit'] 	       = 'Determines how many catalog items are shown per page (products, categories, etc).';
-$_['help_product_description_length']  = 'In the list view, short description character limit (categories, special etc).';
-$_['help_limit_admin']   	       = 'Determines how many admin items are shown per page (orders, customers, etc).';
-$_['help_product_count']           = 'Show the number of products inside the subcategories in the storefront header category menu. Be warned, this will cause an extreme performance hit for stores with a lot of subcategories!';
-$_['help_review']       	       = 'Enable/Disable new review entry and display of existing reviews.';
-$_['help_review_guest']       	   = 'Allow guests to post reviews.';
-$_['help_review_mail']             = 'Send an email to the store owner when a new review is created.';
-$_['help_voucher_min']             = 'Minimum amount a customer can purchase a voucher for.';
-$_['help_voucher_max']             = 'Maximum amount a customer can purchase a voucher for.';
-$_['help_tax_default']             = 'Use the store address to calculate taxes if no one is logged in. You can choose to use the store address for the customer\'s shipping or payment address.';
-$_['help_tax_customer']            = 'Use the customer\'s default address when they login to calculate taxes. You can choose to use the default address for the customer\'s shipping or payment address.';
-$_['help_customer_online']         = 'Track customers online via the customer reports section.';
-$_['help_customer_group']          = 'Default customer group.';
-$_['help_customer_group_display']  = 'Display customer groups that new customers can select to use such as wholesale and business when signing up.';
-$_['help_customer_price']          = 'Only show prices when a customer is logged in.';
-$_['help_account']                 = 'Forces people to agree to terms before an account can be created.';
-$_['help_account_mail']            = 'Send an email to the store owner when a new account is registered.';
-$_['help_cart_weight']             = 'Show the cart weight on the cart page.';
-$_['help_checkout_guest']          = 'Allow customers to checkout without creating an account. This will not be available when a downloadable product is in the shopping cart.';
-$_['help_checkout']                = 'Forces people to agree to terms before a customer can checkout.';
-$_['help_order_edit']              = 'Number of days allowed to edit an order. This is required because prices and discounts may change over time corrupting the order if it\'s edited.';
-$_['help_invoice_prefix']          = 'Set the invoice prefix (e.g. INV-2011-00). Invoice IDs will start at 1 for each unique prefix.';
-$_['help_order_status']            = 'Set the default order status when an order is processed.';
-$_['help_complete_status']         = 'Set the order status the customer\'s order must reach before they are allowed to access their downloadable products and gift vouchers.';
-$_['help_order_mail']              = 'Send an email to the store owner when a new order is created.';
-$_['help_stock_display']           = 'Display stock quantity on the product page.';
-$_['help_stock_warning']           = 'Display out of stock message on the shopping cart page if a product is out of stock but stock checkout is yes. (Warning always shows if stock checkout is no)';
-$_['help_stock_checkout']          = 'Allow customers to still checkout if the products they are ordering are not in stock.';
-$_['help_stock_status']            = 'Set the default out of stock status selected in product edit.';
-$_['help_affiliate_approval']      = 'Automatically approve any new affiliates who sign up.';
-$_['help_affiliate_auto']          = 'Automatically add commission when each order reaches the complete status.';
-$_['help_affiliate_commission']    = 'The default affiliate commission percentage.';
-$_['help_affiliate']               = 'Forces people to agree to terms before an affiliate account can be created.';
-$_['help_affiliate_mail']          = 'Send an email to the store owner when a new affiliate is registered.';
-$_['help_return']                  = 'Forces people to agree to terms before a return can be created.';
-$_['help_return_status']           = 'Set the default return status when a return request is submitted.';
-$_['help_icon']                    = 'The icon should be a PNG that is 16px x 16px.';
-$_['help_ftp_root']                = 'The directory your OpenCart installation is stored in. Normally \'public_html/\'.';
-$_['help_mail_protocol']           = 'Only choose \'Mail\' unless your host has disabled the php mail function.';
-$_['help_mail_parameter']          = 'When using \'Mail\', additional mail parameters can be added here (e.g. "-f email@storeaddress.com").';
-$_['help_mail_alert']              = 'Any additional emails you want to receive the alert email, in addition to the main store email. (comma separated).';
-$_['help_fraud_detection']         = 'MaxMind is a fraud detection service. If you don\'t have a license key you can <a href="http://www.maxmind.com/?rId=opencart" target="_blank"><u>sign up here</u></a>. Once you have obtained a key, copy and paste it into the field below.';
-$_['help_fraud_score']             = 'The higher the score the more likely the order is fraudulent. Set a score between 0 - 100.';
-$_['help_fraud_status']            = 'Orders over your set score will be assigned this order status and will not be allowed to reach the complete status automatically.';
-$_['help_secure']                  = 'To use SSL check with your host if a SSL certificate is installed and add the SSL URL to the catalog and admin config files.';
-$_['help_shared']                  = 'Try to share the session cookie between stores so the cart can be passed between different domains.';
-$_['help_robots']                  = 'A list of web crawler user agents that shared sessions will not be used with. Use separate lines for each user agent.';
-$_['help_seo_url']                 = 'To use SEO URLs, apache module mod-rewrite must be installed and you need to rename the htaccess.txt to .htaccess.';
-$_['help_image_file_size']		   = 'The maximum image file size you can upload in Image Manager. Enter as byte.';
-$_['help_file_extension_allowed']  = 'Add which file extensions are allowed to be uploaded. Use a new line for each value.';
-$_['help_file_mime_allowed']       = 'Add which file mime types are allowed to be uploaded. Use a new line for each value.';
-$_['help_maintenance']             = 'Prevents customers from browsing your store. They will instead see a maintenance message. If logged in as admin, you will see the store as normal.';
-$_['help_password']                = 'Allow forgotten password to be used for the admin. This will be disabled automatically if the system detects a hack attempt.';
-$_['help_encryption']              = 'Please provide a secret key that will be used to encrypt private information when processing orders.';
-$_['help_compression']             = 'GZIP for more efficient transfer to requesting clients. Compression level must be between 0 - 9.';
-$_['help_google_analytics']        = 'Login to your <a href="http://www.google.com/analytics/" target="_blank"><u>Google Analytics</u></a> account and after creating your website profile copy and paste the analytics code into this field.';
-
-// Error
-$_['error_warning']                = 'Warning: Please check the form carefully for errors!';
-$_['error_permission']             = 'Warning: You do not have permission to modify settings!';
-$_['error_name']                   = 'Store Name must be between 3 and 32 characters!';
-$_['error_owner']                  = 'Store Owner must be between 3 and 64 characters!';
-$_['error_address']                = 'Store Address must be between 10 and 256 characters!';
-$_['error_email']                  = 'E-Mail Address does not appear to be valid!';
-$_['error_telephone']              = 'Telephone must be between 3 and 32 characters!';
-$_['error_meta_title']             = 'Title must be between 3 and 32 characters!';
-$_['error_limit']       	       = 'Limit required!';
-$_['error_customer_group_display'] = 'You must include the default customer group if you are going to use this feature!';
-$_['error_voucher_min']            = 'Minimum voucher amount required!';
-$_['error_voucher_max']            = 'Maximum voucher amount required!';
-$_['error_image_thumb']            = 'Product Image Thumb Size dimensions required!';
-$_['error_image_popup']            = 'Product Image Popup Size dimensions required!';
-$_['error_image_product']          = 'Product List Size dimensions required!';
-$_['error_image_category']         = 'Category List Size dimensions required!';
-$_['error_image_additional']       = 'Additional Product Image Size dimensions required!';
-$_['error_image_related']          = 'Related Product Image Size dimensions required!';
-$_['error_image_compare']          = 'Compare Image Size dimensions required!';
-$_['error_image_wishlist']         = 'Wish List Image Size dimensions required!';
-$_['error_image_cart']             = 'Cart Image Size dimensions required!';
-$_['error_image_location']         = 'Store Image Size dimensions required!';
-$_['error_ftp_hostname']               = 'FTP Host required!';
-$_['error_ftp_port']               = 'FTP Port required!';
-$_['error_ftp_username']           = 'FTP Username required!';
-$_['error_ftp_password']           = 'FTP Password required!';
-$_['error_error_filename']         = 'Error Log Filename required!';
-$_['error_encryption']             = 'Encryption Key must be between 3 and 32 characters!';
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

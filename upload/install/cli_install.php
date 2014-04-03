@@ -1,306 +1,238 @@
-<?php
+<?php //004ff
+// IONCUBE ENCODER 8.2 EVALUATION
+// THIS LICENSE MESSAGE IS ONLY ADDED BY THE EVALUATION ENCODER AND
+// IS NOT PRESENT IN PRODUCTION ENCODED FILES
 
-//
-// Command line tool for installing opencart
-// Author: Vineet Naik <vineet.naik@kodeplay.com> <naikvin@gmail.com>
-//
-// (Currently tested on linux only)
-//
-// Usage:
-//
-//   cd install
-//   php cli_install.php install --db_hostname localhost \
-//                               --db_username root \
-//                               --db_password pass \
-//                               --db_database opencart \
-//                               --db_driver mysqli \
-//                               --username admin \
-//                               --password admin \
-//                               --email youremail@example.com \
-//                               --agree_tnc yes \
-//                               --http_server http://localhost/opencart
-//
-
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
-// DIR
-define('DIR_APPLICATION', str_replace('\'', '/', realpath(dirname(__FILE__))) . '/');
-define('DIR_SYSTEM', str_replace('\'', '/', realpath(dirname(__FILE__) . '/../')) . '/system/');
-define('DIR_OPENCART', str_replace('\'', '/', realpath(DIR_APPLICATION . '../')) . '/');
-define('DIR_DATABASE', DIR_SYSTEM . 'database/');
-define('DIR_LANGUAGE', DIR_APPLICATION . 'language/');
-define('DIR_TEMPLATE', DIR_APPLICATION . 'view/template/');
-define('DIR_CONFIG', DIR_SYSTEM . 'config/');
-
-// Startup
-require_once(DIR_SYSTEM . 'startup.php');
-
-// Registry
-$registry = new Registry();
-
-// Loader
-$loader = new Loader($registry);
-$registry->set('load', $loader);
-
-
-function handleError($errno, $errstr, $errfile, $errline, array $errcontext) {
-	// error was suppressed with the @-operator
-	if (0 === error_reporting()) {
-		return false;
-	}
-	throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
-}
-
-set_error_handler('handleError');
-
-
-function usage() {
-	echo "Usage:\n";
-	echo "======\n";
-	echo "\n";
-	$options = implode(" ", array('--db_hostname', 'localhost',
-								  '--db_username', 'root',
-								  '--db_password', 'pass',
-								  '--db_database', 'opencart',
-								  '--db_driver', 'mysqli',
-								  '--username', 'admin',
-								  '--password', 'admin',
-								  '--email', 'youremail@example.com',
-								  '--agree_tnc', 'yes',
-								  '--http_server', 'http://localhost/opencart'));
-	echo 'php cli_install.php install ' . $options . "\n\n";
-}
-
-
-function get_options($argv) {
-	$defaults = array(
-		'db_hostname' => 'localhost',
-		'db_database' => 'opencart',
-		'db_prefix' => 'oc_',
-		'db_driver' => 'mysqli',
-		'username' => 'admin',
-		'agree_tnc' => 'no',
-	);
-
-	$options = array();
-	$total = count($argv);
-	for ($i=0; $i < $total; $i=$i+2) {
-		$is_flag = preg_match('/^--(.*)$/', $argv[$i], $match);
-		if (!$is_flag) {
-			throw new Exception($argv[$i] . ' found in command line args instead of a valid option name starting with \'--\'');
-		}
-		$options[$match[1]] = $argv[$i+1];
-	}
-	return array_merge($defaults, $options);
-}
-
-
-function valid($options) {
-	$required = array(
-		'db_hostname',
-		'db_username',
-		'db_password',
-		'db_database',
-		'db_prefix',
-		'username',
-		'password',
-		'email',
-		'agree_tnc',
-		'http_server',
-	);
-	$missing = array();
-	foreach ($required as $r) {
-		if (!array_key_exists($r, $options)) {
-			$missing[] = $r;
-		}
-	}
-	if ($options['agree_tnc'] !== 'yes') {
-		$missing[] = 'agree_tnc (should be yes)';
-	}
-	$valid = count($missing) === 0 && $options['agree_tnc'] === 'yes';
-	return array($valid, $missing);
-}
-
-
-function install($options) {
-	$check = check_requirements();
-	if ($check[0]) {
-		setup_mysql($options);
-		write_config_files($options);
-		dir_permissions();
-	} else {
-		echo 'FAILED! Pre-installation check failed: ' . $check[1] . "\n\n";
-		exit(1);
-	}
-}
-
-
-function check_requirements() {
-	$error = null;
-	if (phpversion() < '5.0') {
-		$error = 'Warning: You need to use PHP5 or above for OpenCart to work!';
-	}
-
-	if (!ini_get('file_uploads')) {
-		$error = 'Warning: file_uploads needs to be enabled!';
-	}
-
-	if (ini_get('session.auto_start')) {
-		$error = 'Warning: OpenCart will not work with session.auto_start enabled!';
-	}
-
-	if (!extension_loaded('mysql')) {
-		$error = 'Warning: MySQL extension needs to be loaded for OpenCart to work!';
-	}
-
-	if (!extension_loaded('gd')) {
-		$error = 'Warning: GD extension needs to be loaded for OpenCart to work!';
-	}
-
-	if (!extension_loaded('curl')) {
-		$error = 'Warning: CURL extension needs to be loaded for OpenCart to work!';
-	}
-
-	if (!function_exists('mcrypt_encrypt')) {
-		$error = 'Warning: mCrypt extension needs to be loaded for OpenCart to work!';
-	}
-
-	if (!extension_loaded('zlib')) {
-		$error = 'Warning: ZLIB extension needs to be loaded for OpenCart to work!';
-	}
-
-	return array($error === null, $error);
-}
-
-
-function setup_mysql($dbdata) {
-	global $loader, $registry;
-	$loader->model('install');
-	$model = $registry->get('model_install');
-	$model->database($dbdata);
-}
-
-
-function write_config_files($options) {
-	$output  = '<?php' . "\n";
-	$output .= '// HTTP' . "\n";
-	$output .= 'define(\'HTTP_SERVER\', \'' . $options['http_server'] . '\');' . "\n";
-	$output .= 'define(\'HTTP_IMAGE\', \'' . $options['http_server'] . 'image/\');' . "\n";
-	$output .= 'define(\'HTTP_ADMIN\', \'' . $options['http_server'] . 'admin/\');' . "\n\n";
-
-	$output .= '// HTTPS' . "\n";
-	$output .= 'define(\'HTTPS_SERVER\', \'' . $options['http_server'] . '\');' . "\n";
-	$output .= 'define(\'HTTPS_IMAGE\', \'' . $options['http_server'] . 'image/\');' . "\n\n";
-
-	$output .= '// DIR' . "\n";
-	$output .= 'define(\'DIR_APPLICATION\', \'' . DIR_OPENCART . 'catalog/\');' . "\n";
-	$output .= 'define(\'DIR_SYSTEM\', \'' . DIR_OPENCART. 'system/\');' . "\n";
-	$output .= 'define(\'DIR_DATABASE\', \'' . DIR_OPENCART . 'system/database/\');' . "\n";
-	$output .= 'define(\'DIR_LANGUAGE\', \'' . DIR_OPENCART . 'catalog/language/\');' . "\n";
-	$output .= 'define(\'DIR_TEMPLATE\', \'' . DIR_OPENCART . 'catalog/view/theme/\');' . "\n";
-	$output .= 'define(\'DIR_CONFIG\', \'' . DIR_OPENCART . 'system/config/\');' . "\n";
-	$output .= 'define(\'DIR_IMAGE\', \'' . DIR_OPENCART . 'image/\');' . "\n";
-	$output .= 'define(\'DIR_CACHE\', \'' . DIR_OPENCART . 'system/cache/\');' . "\n";
-	$output .= 'define(\'DIR_DOWNLOAD\', \'' . DIR_OPENCART . 'system/download/\');' . "\n";
-    $output .= 'define(\'DIR_MODIFICATION\', \'' . DIR_OPENCART. 'system/modification/\');' . "\n";
-	$output .= 'define(\'DIR_LOGS\', \'' . DIR_OPENCART . 'system/logs/\');' . "\n\n";
-
-	$output .= '// DB' . "\n";
-	$output .= 'define(\'DB_DRIVER\', \'' . addslashes($options['db_driver']) . '\');' . "\n";
-	$output .= 'define(\'DB_HOSTNAME\', \'' . addslashes($options['db_hostname']) . '\');' . "\n";
-	$output .= 'define(\'DB_USERNAME\', \'' . addslashes($options['db_username']) . '\');' . "\n";
-	$output .= 'define(\'DB_PASSWORD\', \'' . addslashes($options['db_password']) . '\');' . "\n";
-	$output .= 'define(\'DB_DATABASE\', \'' . addslashes($options['db_database']) . '\');' . "\n";
-	$output .= 'define(\'DB_PREFIX\', \'' . addslashes($options['db_prefix']) . '\');' . "\n";
-	$output .= '?>';
-
-	$file = fopen(DIR_OPENCART . 'config.php', 'w');
-
-	fwrite($file, $output);
-
-	fclose($file);
-
-	$output  = '<?php' . "\n";
-	$output .= '// HTTP' . "\n";
-	$output .= 'define(\'HTTP_SERVER\', \'' . $options['http_server'] . 'admin/\');' . "\n";
-	$output .= 'define(\'HTTP_CATALOG\', \'' . $options['http_server'] . '\');' . "\n";
-	$output .= 'define(\'HTTP_IMAGE\', \'' . $options['http_server'] . 'image/\');' . "\n\n";
-
-	$output .= '// HTTPS' . "\n";
-	$output .= 'define(\'HTTPS_SERVER\', \'' . $options['http_server'] . 'admin/\');' . "\n";
-	$output .= 'define(\'HTTPS_CATALOG\', \'' . $options['http_server'] . '\');' . "\n";
-	$output .= 'define(\'HTTPS_IMAGE\', \'' . $options['http_server'] . 'image/\');' . "\n\n";
-
-	$output .= '// DIR' . "\n";
-	$output .= 'define(\'DIR_APPLICATION\', \'' . DIR_OPENCART . 'admin/\');' . "\n";
-	$output .= 'define(\'DIR_SYSTEM\', \'' . DIR_OPENCART . 'system/\');' . "\n";
-	$output .= 'define(\'DIR_DATABASE\', \'' . DIR_OPENCART . 'system/database/\');' . "\n";
-	$output .= 'define(\'DIR_LANGUAGE\', \'' . DIR_OPENCART . 'admin/language/\');' . "\n";
-	$output .= 'define(\'DIR_TEMPLATE\', \'' . DIR_OPENCART . 'admin/view/template/\');' . "\n";
-	$output .= 'define(\'DIR_CONFIG\', \'' . DIR_OPENCART . 'system/config/\');' . "\n";
-	$output .= 'define(\'DIR_IMAGE\', \'' . DIR_OPENCART . 'image/\');' . "\n";
-	$output .= 'define(\'DIR_CACHE\', \'' . DIR_OPENCART . 'system/cache/\');' . "\n";
-	$output .= 'define(\'DIR_DOWNLOAD\', \'' . DIR_OPENCART . 'system/download/\');' . "\n";
-	$output .= 'define(\'DIR_LOGS\', \'' . DIR_OPENCART . 'system/logs/\');' . "\n";
-	$output .= 'define(\'DIR_MODIFICATION\', \'' . DIR_OPENCART. 'system/modification/\');' . "\n";
-	$output .= 'define(\'DIR_CATALOG\', \'' . DIR_OPENCART . 'catalog/\');' . "\n\n";
-
-	$output .= '// DB' . "\n";
-	$output .= 'define(\'DB_DRIVER\', \'' . addslashes($options['db_driver']) . '\');' . "\n";
-	$output .= 'define(\'DB_HOSTNAME\', \'' . addslashes($options['db_hostname']) . '\');' . "\n";
-	$output .= 'define(\'DB_USERNAME\', \'' . addslashes($options['db_username']) . '\');' . "\n";
-	$output .= 'define(\'DB_PASSWORD\', \'' . addslashes($options['db_password']) . '\');' . "\n";
-	$output .= 'define(\'DB_DATABASE\', \'' . addslashes($options['db_database']) . '\');' . "\n";
-	$output .= 'define(\'DB_PREFIX\', \'' . addslashes($options['db_prefix']) . '\');' . "\n";
-	$output .= '?>';
-
-	$file = fopen(DIR_OPENCART . 'admin/config.php', 'w');
-
-	fwrite($file, $output);
-
-	fclose($file);
-}
-
-
-function dir_permissions() {
-	$dirs = array(
-		DIR_OPENCART . 'image/',
-		DIR_OPENCART . 'system/download/',
-		DIR_SYSTEM . 'cache/',
-		DIR_SYSTEM . 'logs/',
-	);
-	exec('chmod o+w -R ' . implode(' ', $dirs));
-}
-
-
-$argv = $_SERVER['argv'];
-$script = array_shift($argv);
-$subcommand = array_shift($argv);
-
-
-switch ($subcommand) {
-
-case "install":
-	try {
-		$options = get_options($argv);
-		define('HTTP_OPENCART', $options['http_server']);
-		$valid = valid($options);
-		if (!$valid[0]) {
-			echo "FAILED! Following inputs were missing or invalid: ";
-			echo implode(', ', $valid[1]) . "\n\n";
-			exit(1);
-		}
-		install($options);
-		echo "SUCCESS! Opencart successfully installed on your server\n";
-		echo "Store link: " . $options['http_server'] . "\n";
-		echo "Admin link: " . $options['http_server'] . "admin/\n\n";
-	} catch (ErrorException $e) {
-		echo 'FAILED!: ' . $e->getMessage() . "\n";
-		exit(1);
-	}
-	break;
-case "usage":
-default:
-	echo usage();
-}
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

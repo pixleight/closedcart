@@ -1,102 +1,107 @@
-<?php 
-class ModelLocalisationTaxRate extends Model {
-	public function addTaxRate($data) {
-		$this->db->query("INSERT INTO " . DB_PREFIX . "tax_rate SET name = '" . $this->db->escape($data['name']) . "', rate = '" . (float)$data['rate'] . "', `type` = '" . $this->db->escape($data['type']) . "', geo_zone_id = '" . (int)$data['geo_zone_id'] . "', date_added = NOW(), date_modified = NOW()");
-		
-		$tax_rate_id = $this->db->getLastId();
-		
-		if (isset($data['tax_rate_customer_group'])) {
-			foreach ($data['tax_rate_customer_group'] as $customer_group_id) {
-				$this->db->query("INSERT INTO " . DB_PREFIX . "tax_rate_to_customer_group SET tax_rate_id = '" . (int)$tax_rate_id . "', customer_group_id = '" . (int)$customer_group_id . "'");
-			}
-		}
-	}
-	
-	public function editTaxRate($tax_rate_id, $data) {
-		$this->db->query("UPDATE " . DB_PREFIX . "tax_rate SET name = '" . $this->db->escape($data['name']) . "', rate = '" . (float)$data['rate'] . "', `type` = '" . $this->db->escape($data['type']) . "', geo_zone_id = '" . (int)$data['geo_zone_id'] . "', date_modified = NOW() WHERE tax_rate_id = '" . (int)$tax_rate_id . "'");
-		
-		$this->db->query("DELETE FROM " . DB_PREFIX . "tax_rate_to_customer_group WHERE tax_rate_id = '" . (int)$tax_rate_id . "'");
-		
-		if (isset($data['tax_rate_customer_group'])) {
-			foreach ($data['tax_rate_customer_group'] as $customer_group_id) {
-				$this->db->query("INSERT INTO " . DB_PREFIX . "tax_rate_to_customer_group SET tax_rate_id = '" . (int)$tax_rate_id . "', customer_group_id = '" . (int)$customer_group_id . "'");
-			}
-		}		
-	}
-	
-	public function deleteTaxRate($tax_rate_id) {
-		$this->db->query("DELETE FROM " . DB_PREFIX . "tax_rate WHERE tax_rate_id = '" . (int)$tax_rate_id . "'");
-		$this->db->query("DELETE FROM " . DB_PREFIX . "tax_rate_to_customer_group WHERE tax_rate_id = '" . (int)$tax_rate_id . "'");
-	}
-	
-	public function getTaxRate($tax_rate_id) {
-		$query = $this->db->query("SELECT tr.tax_rate_id, tr.name AS name, tr.rate, tr.type, tr.geo_zone_id, gz.name AS geo_zone, tr.date_added, tr.date_modified FROM " . DB_PREFIX . "tax_rate tr LEFT JOIN " . DB_PREFIX . "geo_zone gz ON (tr.geo_zone_id = gz.geo_zone_id) WHERE tr.tax_rate_id = '" . (int)$tax_rate_id . "'");
-		
-		return $query->row;
-	}
+<?php //004ff
+// IONCUBE ENCODER 8.2 EVALUATION
+// THIS LICENSE MESSAGE IS ONLY ADDED BY THE EVALUATION ENCODER AND
+// IS NOT PRESENT IN PRODUCTION ENCODED FILES
 
-	public function getTaxRates($data = array()) {
-		$sql = "SELECT tr.tax_rate_id, tr.name AS name, tr.rate, tr.type, gz.name AS geo_zone, tr.date_added, tr.date_modified FROM " . DB_PREFIX . "tax_rate tr LEFT JOIN " . DB_PREFIX . "geo_zone gz ON (tr.geo_zone_id = gz.geo_zone_id)";
-
-		$sort_data = array(
-			'tr.name',
-			'tr.rate',
-			'tr.type',
-			'gz.name',
-			'tr.date_added',
-			'tr.date_modified'
-		);	
-		
-		if (isset($data['sort']) && in_array($data['sort'], $sort_data)) {
-			$sql .= " ORDER BY " . $data['sort'];	
-		} else {
-			$sql .= " ORDER BY tr.name";	
-		}
-		
-		if (isset($data['order']) && ($data['order'] == 'DESC')) {
-			$sql .= " DESC";
-		} else {
-			$sql .= " ASC";
-		}
-		
-		if (isset($data['start']) || isset($data['limit'])) {
-			if ($data['start'] < 0) {
-				$data['start'] = 0;
-			}					
-
-			if ($data['limit'] < 1) {
-				$data['limit'] = 20;
-			}	
-		
-			$sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
-		}
-		
-		$query = $this->db->query($sql);
-	
-		return $query->rows;		
-	}
-	
-	public function getTaxRateCustomerGroups($tax_rate_id) {
-		$tax_customer_group_data = array();
-		
-		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "tax_rate_to_customer_group WHERE tax_rate_id = '" . (int)$tax_rate_id . "'");
-		
-		foreach ($query->rows as $result) {
-			$tax_customer_group_data[] = $result['customer_group_id'];
-		}
-		
-		return $tax_customer_group_data;			
-	}
-				
-	public function getTotalTaxRates() {
-      	$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "tax_rate");
-		
-		return $query->row['total'];
-	}	
-	
-	public function getTotalTaxRatesByGeoZoneId($geo_zone_id) {
-      	$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "tax_rate WHERE geo_zone_id = '" . (int)$geo_zone_id . "'");
-		
-		return $query->row['total'];
-	}
-}
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

@@ -1,74 +1,69 @@
-<?php
-// Heading
-$_['heading_title']                            = 'Fedex';
+<?php //004ff
+// IONCUBE ENCODER 8.2 EVALUATION
+// THIS LICENSE MESSAGE IS ONLY ADDED BY THE EVALUATION ENCODER AND
+// IS NOT PRESENT IN PRODUCTION ENCODED FILES
 
-// Text
-$_['text_shipping']                            = 'Shipping';
-$_['text_success']                             = 'Success: You have modified Fedex shipping!';
-$_['text_europe_first_international_priority'] = 'Europe First International Priority';
-$_['text_fedex_1_day_freight']                 = 'Fedex 1 Day Freight';
-$_['text_fedex_2_day']                         = 'Fedex 2 Day';
-$_['text_fedex_2_day_am']                      = 'Fedex 2 Day AM';
-$_['text_fedex_2_day_freight']                 = 'Fedex 2 Day Freight';
-$_['text_fedex_3_day_freight']                 = 'Fedex 3 Day Freight';
-$_['text_fedex_express_saver']                 = 'Fedex Express Saver';
-$_['text_fedex_first_freight']                 = 'Fedex First Fright';
-$_['text_fedex_freight_economy']               = 'Fedex Fright Economy';
-$_['text_fedex_freight_priority']              = 'Fedex Fright Priority';
-$_['text_fedex_ground']                        = 'Fedex Ground';
-$_['text_first_overnight']                     = 'First Overnight';
-$_['text_ground_home_delivery']                = 'Ground Home Delivery';
-$_['text_international_economy']               = 'International Economy';
-$_['text_international_economy_freight']       = 'International Economy Freight';
-$_['text_international_first']                 = 'International First';
-$_['text_international_priority']              = 'International Priority';
-$_['text_international_priority_freight']      = 'International Priority Freight';
-$_['text_priority_overnight']                  = 'Priority Overnight';
-$_['text_smart_post']                          = 'Smart Post';
-$_['text_standard_overnight']                  = 'Standard Overnight';
-$_['text_regular_pickup']                      = 'Regular Pickup';
-$_['text_request_courier']                     = 'Request Courier';
-$_['text_drop_box']                            = 'Drop Box';
-$_['text_business_service_center']             = 'Business Service Center';
-$_['text_station']                             = 'Station';
-$_['text_fedex_envelope']                      = 'FedEx Envelope';
-$_['text_fedex_pak']                           = 'FedEx Pak';
-$_['text_fedex_box']                           = 'FedEx Box';
-$_['text_fedex_tube']                          = 'FedEx Tube';
-$_['text_fedex_10kg_box']                      = 'FedEx 10kg Box';
-$_['text_fedex_25kg_box']                      = 'FedEx 25kg Box';
-$_['text_your_packaging']                      = 'Your Packaging';
-$_['text_list_rate']                           = 'List Rate';
-$_['text_account_rate']                        = 'Account Rate';
-
-// Entry
-$_['entry_key']                                = 'Key';
-$_['entry_password']                           = 'Password';
-$_['entry_account']                            = 'Account Number';
-$_['entry_meter']                              = 'Meter Number';
-$_['entry_postcode']                           = 'Post Code';
-$_['entry_test']                               = 'Test Mode';
-$_['entry_service']                            = 'Services';
-$_['entry_dropoff_type']                       = 'Drop Off Type';
-$_['entry_packaging_type']                     = 'Packaging Type';
-$_['entry_rate_type']                          = 'Rate Type';
-$_['entry_display_time']                       = 'Display Delivery Time';
-$_['entry_display_weight']                     = 'Display Delivery Weight';
-$_['entry_weight_class']                       = 'Weight Class';
-$_['entry_tax_class']                          = 'Tax Class';
-$_['entry_geo_zone']                           = 'Geo Zone';
-$_['entry_status']                             = 'Status';
-$_['entry_sort_order']                         = 'Sort Order';
-
-// Help
-$_['help_display_time']                        = 'Do you want to display the shipping time? (e.g. Ships within 3 to 5 days)';
-$_['help_display_weight']                      = 'Do you want to display the shipping weight? (e.g. Delivery Weight : 2.7674 Kg\'s)';
-$_['help_weight_class']                        = 'Set to kilograms or pounds.';
-
-// Error
-$_['error_permission']                         = 'Warning: You do not have permission to modify Fedex shipping!';
-$_['error_key']                                = 'Key Required!';
-$_['error_password']                           = 'Password Required!';
-$_['error_account']                            = 'Account Required!';
-$_['error_meter']                              = 'Meter Required!';
-$_['error_postcode']                           = 'Post Code Required!';
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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
+uiu=

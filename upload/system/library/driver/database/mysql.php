@@ -1,80 +1,70 @@
-<?php
-final class DBMySQL {
-	private $link;
+<?php //004ff
+// IONCUBE ENCODER 8.2 EVALUATION
+// THIS LICENSE MESSAGE IS ONLY ADDED BY THE EVALUATION ENCODER AND
+// IS NOT PRESENT IN PRODUCTION ENCODED FILES
 
-	public function __construct($hostname, $username, $password, $database) {
-		if (!$this->link = mysql_connect($hostname, $username, $password)) {
-			trigger_error('Error: Could not make a database link using ' . $username . '@' . $hostname);
-		}
-
-		if (!mysql_select_db($database, $this->link)) {
-			trigger_error('Error: Could not connect to database ' . $database);
-		}
-		
-		mysql_query("SET NAMES 'utf8'", $this->link);
-		mysql_query("SET CHARACTER SET utf8", $this->link);
-		mysql_query("SET CHARACTER_SET_CONNECTION=utf8", $this->link);
-		mysql_query("SET SQL_MODE = ''", $this->link);
-	}
-
-	public function query($sql) {
-		if ($this->link) {
-			$resource = mysql_query($sql, $this->link);
-
-			if ($resource) {
-				if (is_resource($resource)) {
-					$i = 0;
-
-					$data = array();
-
-					while ($result = mysql_fetch_assoc($resource)) {
-						$data[$i] = $result;
-
-						$i++;
-					}
-
-					mysql_free_result($resource);
-
-					$query = new stdClass();
-					$query->row = isset($data[0]) ? $data[0] : array();
-					$query->rows = $data;
-					$query->num_rows = $i;
-
-					unset($data);
-
-					return $query;
-				} else {
-					return true;
-				}
-			} else {
-				$trace = debug_backtrace();
-
-				trigger_error('Error: ' . mysql_error($this->link) . '<br />Error No: ' . mysql_errno($this->link) . '<br /> Error in: <b>' . $trace[1]['file'] . '</b> line <b>' . $trace[1]['line'] . '</b><br />' . $sql);
-			}
-		}
-	}
-
-	public function escape($value) {
-		if ($this->link) {
-			return mysql_real_escape_string($value, $this->link);
-		}
-	}
-
-	public function countAffected() {
-		if ($this->link) {
-			return mysql_affected_rows($this->link);
-		}
-	}
-
-	public function getLastId() {
-		if ($this->link) {
-			return mysql_insert_id($this->link);
-		}
-	}
-
-	public function __destruct() {
-		if ($this->link) {
-			mysql_close($this->link);
-		}
-	}
-}
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

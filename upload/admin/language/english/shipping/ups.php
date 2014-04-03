@@ -1,115 +1,107 @@
-<?php
-// Heading
-$_['heading_title']                = 'UPS';
+<?php //004ff
+// IONCUBE ENCODER 8.2 EVALUATION
+// THIS LICENSE MESSAGE IS ONLY ADDED BY THE EVALUATION ENCODER AND
+// IS NOT PRESENT IN PRODUCTION ENCODED FILES
 
-// Text
-$_['text_shipping']                = 'Shipping';
-$_['text_success']                 = 'Success: You have modified UPS shipping!';
-$_['text_regular_daily_pickup']    = 'Regular Daily Pickup';
-$_['text_daily_pickup']            = 'Daily Pickup';
-$_['text_customer_counter']        = 'Customer Counter';
-$_['text_one_time_pickup']         = 'One Time Pickup';
-$_['text_on_call_air_pickup']      = 'On Call Air Pickup';
-$_['text_letter_center']           = 'Letter Center';
-$_['text_air_service_center']      = 'Air Service Center';
-$_['text_suggested_retail_rates']  = 'Suggested Retail Rates (UPS Store)';
-$_['text_package']                 = 'Package';
-$_['text_ups_letter']              = 'UPS Letter';
-$_['text_ups_tube']                = 'UPS Tube';
-$_['text_ups_pak']                 = 'UPS Pak';
-$_['text_ups_express_box']         = 'UPS Express Box';
-$_['text_ups_25kg_box']            = 'UPS 25kg box';
-$_['text_ups_10kg_box']            = 'UPS 10kg box';
-$_['text_us']                      = 'US Origin';
-$_['text_ca']                      = 'Canada Origin';
-$_['text_eu']                      = 'European Union Origin';
-$_['text_pr']                      = 'Puerto Rico Origin';
-$_['text_mx']                      = 'Mexico Origin';
-$_['text_other']                   = 'All Other Origins';
-$_['text_test']                    = 'Test';
-$_['text_production']              = 'Production';	
-$_['text_residential']             = 'Residential';
-$_['text_commercial']              = 'Commercial';
-$_['text_next_day_air']            = 'UPS Next Day Air';
-$_['text_2nd_day_air']             = 'UPS Second Day Air';
-$_['text_ground']                  = 'UPS Ground';
-$_['text_3_day_select']            = 'UPS Three-Day Select';
-$_['text_next_day_air_saver']      = 'UPS Next Day Air Saver';
-$_['text_next_day_air_early_am']   = 'UPS Next Day Air Early A.M.';
-$_['text_2nd_day_air_am']          = 'UPS Second Day Air A.M.';
-$_['text_saver']                   = 'UPS Saver';
-$_['text_worldwide_express']       = 'UPS Worldwide Express';
-$_['text_worldwide_expedited']     = 'UPS Worldwide Expedited';
-$_['text_standard']                = 'UPS Standard';
-$_['text_worldwide_express_plus']  = 'UPS Worldwide Express Plus';
-$_['text_express']                 = 'UPS Express';
-$_['text_expedited']               = 'UPS Expedited';
-$_['text_express_early_am']        = 'UPS Express Early A.M.';
-$_['text_express_plus']            = 'UPS Express Plus';
-$_['text_today_standard']          = 'UPS Today Standard';
-$_['text_today_dedicated_courier'] = 'UPS Today Dedicated Courier';
-$_['text_today_intercity']         = 'UPS Today Intercity';
-$_['text_today_express']           = 'UPS Today Express';
-$_['text_today_express_saver']     = 'UPS Today Express Saver';
-
-// Entry
-$_['entry_key']                    = 'Access Key';
-$_['entry_username']               = 'Username';
-$_['entry_password']               = 'Password';
-$_['entry_pickup']                 = 'Pickup Method';
-$_['entry_packaging']              = 'Packaging Type';
-$_['entry_classification']         = 'Customer Classification Code';
-$_['entry_origin']                 = 'Shipping Origin Code';
-$_['entry_city']                   = 'Origin City';
-$_['entry_state']                  = 'Origin State/Province';
-$_['entry_country']                = 'Origin Country';
-$_['entry_postcode']               = 'Origin Zip/Postal Code';
-$_['entry_test']                   = 'Test Mode';
-$_['entry_quote_type']             = 'Quote Type';
-$_['entry_service']                = 'Services';
-$_['entry_insurance']              = 'Enable Insurance';
-$_['entry_display_weight']         = 'Display Delivery Weight';
-$_['entry_weight_class']           = 'Weight Class';
-$_['entry_length_class']           = 'Length Class';
-$_['entry_dimension']			   = 'Dimensions (L x W x H)';
-$_['entry_length']                 = 'Length';
-$_['entry_height']                 = 'Height';
-$_['entry_width']                  = 'Width';
-$_['entry_height']                 = 'Height';
-$_['entry_tax_class']              = 'Tax Class';
-$_['entry_geo_zone']               = 'Geo Zone';
-$_['entry_status']                 = 'Status';
-$_['entry_sort_order']             = 'Sort Order';
-$_['entry_debug']      			   = 'Debug Mode';
-
-// Help
-$_['help_key']                     = 'Enter the XML rates access key assigned to you by UPS.';
-$_['help_username']                = 'Enter your UPS Services account username.';
-$_['help_password']                = 'Enter your UPS Services account password.';
-$_['help_pickup']                  = 'How do you give packages to UPS (only used when origin is US)?';
-$_['help_packaging']               = 'What kind of packaging do you use?';
-$_['help_classification']          = '01 - If you are billing to a UPS account and have a daily UPS pickup, 03 - If you do not have a UPS account or you are billing to a UPS account but do not have a daily pickup, 04 - If you are shipping from a retail outlet (only used when origin is US)';
-$_['help_origin']                  = 'What origin point should be used (this setting affects only what UPS product names are shown to the user)';
-$_['help_city']                    = 'Enter the name of the origin city.';
-$_['help_state']                   = 'Enter the two-letter code for your origin state/province.';
-$_['help_country']                 = 'Enter the two-letter code for your origin country.';
-$_['help_postcode']                = 'Enter your origin zip/postalcode.';
-$_['help_test']                    = 'Use this module in Test (YES) or Production mode (NO)?';
-$_['help_quote_type']              = 'Quote for Residential or Commercial Delivery.';
-$_['help_service']                 = 'Select the UPS services to be offered.';
-$_['help_insurance']               = 'Enables insurance with product total as the value';
-$_['help_display_weight']          = 'Do you want to display the shipping weight? (e.g. Delivery Weight : 2.7674 Kg\'s)';
-$_['help_weight_class']            = 'Set to kilograms or pounds.</span>';
-$_['help_length_class']            = 'Set to centimeters or inches.</span>';
-$_['help_dimension']			   = 'This is assumed to be your average packing box size. Individual item dimensions are not supported at this time so you must enter average dimensions like 5x5x5.';
-$_['help_debug']      			   = 'Saves send/recv data to the system log';
-
-// Error
-$_['error_permission']             = 'Warning: You do not have permission to modify UPS (US) shipping!';
-$_['error_key']                    = 'Access Key Required!';
-$_['error_username']               = 'Username Required!';
-$_['error_password']               = 'Password Required!';
-$_['error_city']                   = 'Origin City!';
-$_['error_state']                  = 'Origin State/Province Required!';
-$_['error_country']                = 'Origin Country Required!';
-$_['error_dimension']              = 'Average Dimensions Required!';
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

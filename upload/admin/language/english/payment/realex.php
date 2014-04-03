@@ -1,98 +1,87 @@
-<?php
-// Heading
-$_['heading_title']= 'Realex Redirect';
-$_['text_realex'] = '<img src="view/image/payment/realex.png" alt="Realex" title="Realex" style="border: 1px solid #EEEEEE;" />';
+<?php //004ff
+// IONCUBE ENCODER 8.2 EVALUATION
+// THIS LICENSE MESSAGE IS ONLY ADDED BY THE EVALUATION ENCODER AND
+// IS NOT PRESENT IN PRODUCTION ENCODED FILES
 
-// Config tabs
-$_['tab_account'] = 'API info';
-$_['tab_sub_account'] = 'Accounts';
-$_['tab_order_status'] = 'Order status';
-$_['tab_payment'] = 'Payment settings';
-$_['tab_advanced'] = 'Advanced';
-
-// Text
-$_['text_payment'] = 'Payment';
-$_['text_success'] = 'Success: You have modified Realex account details!';
-$_['text_notification_url'] = 'Notification URL';
-$_['text_live'] = 'Live';
-$_['text_demo'] = 'Demo';
-$_['text_yes'] = 'Yes';
-$_['text_no'] = 'No';
-$_['text_help_total'] = 'The checkout total the order must reach before this payment method becomes active';
-$_['text_help_card_select'] = 'Ask the user to choose their card type before they are redirected';
-$_['text_help_notification'] = 'You need to supply this URL to Realex to get payment notifications';
-$_['text_help_debug'] = 'Enabling debug will write sensitive data to a log file. You should always disable unless instructed otherwise';
-$_['text_help_dcc_settle'] = 'If your subaccount is DCC enabled you must use Autosettle';
-$_['text_card_type'] = 'Card type';
-$_['text_enabled'] = 'Enabled';
-$_['text_use_default'] = 'Use default';
-$_['text_merchant_id'] = 'Merchant ID';
-$_['text_subaccount'] = 'Subaccount';
-$_['text_secret'] = 'Shared secret';
-$_['text_card_visa'] = 'Visa';
-$_['text_card_master'] = 'Mastercard';
-$_['text_card_amex'] = 'American Express';
-$_['text_card_switch'] = 'Switch/Maestro';
-$_['text_card_laser'] = 'Laser';
-$_['text_card_diners'] = 'Diners';
-$_['text_capture_ok'] = 'Capture was successful';
-$_['text_capture_ok_order'] = 'Capture was successful, order status updated to success - settled';
-$_['text_rebate_ok'] = 'Rebate was successful';
-$_['text_rebate_ok_order'] = 'Rebate was successful, order status updated to rebated';
-$_['text_void_ok'] = 'Void was successful, order status updated to voided';
-$_['text_settle_auto'] = 'Auto';
-$_['text_settle_delayed'] = 'Delayed';
-$_['text_settle_multi'] = 'Multi';
-
-// Entry
-$_['entry_merchant_id'] = 'Merchant ID';
-$_['entry_secret'] = 'Shared secret';
-$_['entry_rebate_password'] = 'Rebate password';
-$_['entry_total'] = 'Total';
-$_['entry_sort_order'] = 'Sort order';
-$_['entry_geo_zone'] = 'Geo zone';
-$_['entry_status'] = 'Status';
-$_['entry_debug'] = 'Debug logging';
-$_['entry_live_demo'] = 'Live / Demo';
-$_['entry_auto_settle'] = 'Settlement type';
-$_['entry_card_select'] = 'Select card';
-$_['entry_tss_check'] = 'TSS checks';
-$_['entry_live_url'] = 'Live connection URL';
-$_['entry_demo_url'] = 'Demo connection URL';
-$_['entry_status_success_settled'] = 'Success - settled';
-$_['entry_status_success_unsettled'] = 'Success - not settled';
-$_['entry_status_decline'] = 'Decline';
-$_['entry_status_decline_pending'] = 'Decline - offline auth';
-$_['entry_status_decline_stolen'] = 'Decline - stolen card';
-$_['entry_status_decline_bank'] = 'Decline - bank error';
-$_['entry_status_void'] = 'Voided';
-$_['entry_status_rebate'] = 'Rebated';
-
-// Error
-$_['error_merchant_id'] = 'Merchant ID is required';
-$_['error_secret'] = 'Shared secret is required';
-$_['error_live_url'] = 'Live URL is required';
-$_['error_demo_url'] = 'Demo URL is required';
-$_['error_data_missing'] = 'Data missing';
-$_['error_use_select_card'] = 'You must have "Select Card" enabled for subaccount routing by card type to work';
-
-// Order page - payment tab
-$_['text_payment_info'] = 'Payment information';
-$_['text_capture_status'] = 'Payment captured';
-$_['text_void_status'] = 'Payment voided';
-$_['text_rebate_status'] = 'Payment rebated';
-$_['text_order_ref'] = 'Order ref';
-$_['text_order_total'] = 'Total authorised';
-$_['text_total_captured'] = 'Total captured';
-$_['text_transactions'] = 'Transactions';
-$_['text_column_amount'] = 'Amount';
-$_['text_column_type'] = 'Type';
-$_['text_column_created'] = 'Created';
-
-$_['text_confirm_void'] = 'Are you sure you want to void the payment?';
-$_['text_confirm_capture'] = 'Are you sure you want to capture the payment?';
-$_['text_confirm_rebate'] = 'Are you sure you want to rebate the payment?';
-
-$_['btn_capture'] = 'Capture';
-$_['btn_rebate'] = 'Rebate / refund';
-$_['btn_void'] = 'Void';
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+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

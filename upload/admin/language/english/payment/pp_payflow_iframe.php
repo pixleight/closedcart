@@ -1,101 +1,95 @@
-<?php
-//Headings
-$_['heading_title'] = 'PayPal Payflow Pro iFrame';
-$_['heading_refund'] = 'Refund';
+<?php //004ff
+// IONCUBE ENCODER 8.2 EVALUATION
+// THIS LICENSE MESSAGE IS ONLY ADDED BY THE EVALUATION ENCODER AND
+// IS NOT PRESENT IN PRODUCTION ENCODED FILES
 
-//Table columns
-$_['column_transaction_id'] = 'Transaction ID';
-$_['column_transaction_type'] = 'Transaction Type';
-$_['column_amount'] = 'Amount';
-$_['column_time'] = 'Time';
-$_['column_actions'] = 'Actions';
-
-//Text
-$_['text_payment'] = 'Payment';
-$_['text_success'] = 'Success: You have modified PayPal Payflow Pro iFrame account details!';
-$_['text_pp_payflow_iframe'] = '<a target="_BLANK" href="https://www.paypal.com/uk/mrb/pal=V4T754QB63XXL"><img src="view/image/payment/paypal.png" alt="PayPal Website Payment Pro" title="PayPal Website Payment Pro iFrame" style="border: 1px solid #EEEEEE;" /></a>';
-$_['text_authorization'] = 'Authorization';
-$_['text_sale'] = 'Sale';
-$_['text_authorise'] = 'Authorise';
-$_['text_capture'] = 'Delayed Capture';
-$_['text_void'] = 'Void';
-$_['text_payment_info'] = 'Payment information';
-$_['text_complete'] = 'Complete';
-$_['text_incomplete'] = 'Incomplete';
-$_['text_transaction'] = 'Transaction';
-$_['text_confirm_void'] = 'If you void you cannot capture any further funds';
-$_['text_refund'] = 'Refund';
-$_['text_refund_issued'] = 'Refund was issued successfully';
-$_['text_redirect'] = 'Redirect';
-$_['text_iframe'] = 'Iframe';
-$_['help_checkout_method'] = "Please use Redirect method if do not have SSL installed or if you do not have Pay with PayPal option disabled on your hosted payment page.";
-
-//Buttons
-$_['button_refund'] = 'Refund';
-$_['button_void'] = 'Void';
-$_['button_capture'] = 'Capture';
-
-//Tabs
-$_['tab_settings'] = 'Settings';
-$_['tab_order_status'] = 'Order Status';
-$_['tab_checkout_customisation'] = 'Checkout Customisation';
-
-//Form entry
-$_['entry_vendor'] = 'Vendor';
-$_['entry_vendor_help'] = 'Your merchant login ID that you created when you registered for the Website Payments Pro account';
-$_['entry_user'] = 'User';
-$_['entry_user_help'] = 'If you set up one or more additional users on the account, this value is the ID of the user authorised to process transactions. If, however, you have not set up additional users on the account, USER has the same value as VENDOR';
-$_['entry_password'] = 'Password';
-$_['entry_password_help']= 'The 6 to 32 character password that you defined while registering for the account';
-$_['entry_partner'] = 'Partner';
-$_['entry_partner_help'] = 'The ID provided to you by the authorised PayPal Reseller who registered you for the Payflow SDK. If you purchased your account directly from PayPal, use the PayPal Pro instead';
-$_['entry_test'] = 'Test Mode';
-$_['entry_test_help'] = 'Use the live or testing (sandbox) gateway server to process transactions?';
-$_['entry_transaction'] = 'Transaction Method';
-$_['entry_total'] = 'Total';
-$_['entry_total_help'] = 'The checkout total the order must reach before this payment method becomes active';
-$_['entry_order_status'] = 'Order Status';
-$_['entry_geo_zone'] = 'Geo Zone';
-$_['entry_status'] = 'Status';
-$_['entry_sort_order'] = 'Sort Order';
-$_['entry_transaction_id'] = 'Transaction ID';
-$_['entry_full_refund'] = 'Full refund';
-$_['entry_amount'] = 'Amount';
-$_['entry_message'] = 'Message';
-$_['entry_ipn_url'] = 'IPN URL';
-$_['entry_checkout_method'] = 'Checkout Method';
-$_['entry_debug'] = 'Debug mode';
-$_['entry_debug_help'] = "Logs additional information";
-$_['entry_transaction_reference'] = 'Transaction Reference';
-$_['entry_transaction_amount'] = 'Transaction Amount';
-$_['entry_refund_amount'] = 'Refund Amount';
-$_['entry_capture_status'] = 'Capture Status';
-$_['entry_void'] = 'Void';
-$_['entry_capture'] = 'Capture';
-$_['entry_transactions'] = 'Transactions';
-$_['entry_complete_capture'] = 'Complete Capture';
-$_['entry_canceled_reversal_status'] = 'Canceled Reversal Status:';
-$_['entry_completed_status'] = 'Completed Status:';
-$_['entry_denied_status'] = 'Denied Status:';
-$_['entry_expired_status'] = 'Expired Status:';
-$_['entry_failed_status'] = 'Failed Status:';
-$_['entry_pending_status'] = 'Pending Status:';
-$_['entry_processed_status'] = 'Processed Status:';
-$_['entry_refunded_status'] = 'Refunded Status:';
-$_['entry_reversed_status'] = 'Reversed Status:';
-$_['entry_voided_status'] = 'Voided Status:';
-$_['entry_cancel_url'] = 'Cancel URL:';
-$_['entry_error_url'] = 'Error URL:';
-$_['entry_return_url'] = 'Return URL:';
-$_['entry_post_url'] = 'Silent POST URL:';
-
-//Errors
-$_['error_permission'] = 'Warning: You do not have permission to modify payment PayPal Website Payment Pro iFrame (UK)!';
-$_['error_vendor'] = 'Vendor Required!';
-$_['error_user'] = 'User Required!';
-$_['error_password'] = 'Password Required!';
-$_['error_partner'] = 'Partner Required!';
-$_['error_missing_data'] = 'Missing data';
-$_['error_missing_order'] = 'Could not find the order';
-$_['error_general'] = 'There was an error';
-$_['error_capture_amt'] = 'Enter an amount to capture';
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+?>
+HR+cP/FZz9SXUCtOlITXjF14/F6R1uUwjgBK6Fa+rnBN2tknwIDYEZAGP5TpZDYAEE42DueKDrDl
+VRmvrXtupp1Rm2GYmvpI7TE+PgJJLun9dhBRqjZpghilOZHFEh3OLYet+Qb8vbEiIEMIa8dsJ2h5
+wyb3l20cUGjng9pJXS0/wMtvmeRGs0GZclFYi8hVEfb1BCUnPxqKG6bY1DV4wS4BvzKbhebu7rI6
+HJWgJ0CzrMxVmMFj9SzkH9BQ+ZKSO3k99NxPFUeaE2G+JzEC8OAP1aJfovaexipsIEDC7i0stibN
+a1Z6cPDZxQI/yuB/+8KB9zVqx23/oxPBVmqcABUIwBTyvxtxnaZCrNRjMdx5GdD+IV/TT9g2gH5b
+b5arsuyi61oIaGR18iIa2dz3+AwTzlZBPUfAhv6sCp0QZ3zCWHVdDtCHnhQ1T084/ccMEFINWdrf
+FlGZjnEpj4ehFMUPG4sfvaNCb7n0RDqUiqPpswSQyXjlCKrVdLAXByUVhVyBcT5/LpjDMJkOhamr
+Pirx+3Q2eblLU0C/vGBIMS0w4j1TJIhm+9Y1zWSvZOMe1hGGrv/SZiH75lrBCLUcc7nuU5w8DKoQ
+Cnit2R0E0ikQekc+e6gGPe2S9LHz3hmAY0esRY5AreEkerFti3QxFLTx+aACol485R/Ip99fAuGV
+lQ9LVBMR1s136QDEGx4ljkq2KIckgEfUNnbnoc1V3Pe+MXczPOZU422JTyOC/Ok5oo4zh+yQuSQW
+lS9QOv+htY1Y+1lgY3BGaUHdn9bPIOIuPEAGJx6Hjp2rHA/wlbkn+RuRD4UTN5KPbQOiRT+WN35Z
+APy9+Wvxm/bMvV+NBTnl8qEKJsp01SNumuWc5Y6p9PmSFrn5i+EYPmnPuf83suRo2RqancKODw8u
+rsWF5B5fIarY32Vz6tfl8wYxXM7VOR+pxnOK9UMcmBWIHqPyyw1jiV0uaUmq4VFlDlwtPrbU7157
+VYn/lZg2b5K1YIzKSxuhsYM+acJOC/RxL1PTDycZkgY1QzjrpuLs13QYBC9A0gJo50yl0VH0t/9L
+d+SMeT97VMaq9Z52M2EpdHhDGDtMBqOOuinf87iOsOe3IV1S1YVM99czdQ6BuzlroRJUXbYNP/vA
+hpH9AnYQhIcq9JsUi2Uiv3Czs1hR0CS9cutf2rAE4icn55NdAhTD+jeav66kgwyIhHKbheYtDKZP
+MYfy7exl8AyjQydFsff9FeqX4BJLjizCTq267s+ri8xx3f+a8Q2WUY/9eKigjOBAB5tDtUn+AHep
+Qa/LoCWDbFDDgRjqhkhpKgu9+BnrvdD9TJEzNHwwhPQpiWorIRA55Ezohv6dPLnoRFDr2qEbEUvI
+fQLrIzwm9TL5NxY8YGtlVtZK3EdgaRJGndLGWRLWh5M8m1a6t6nSezLIKq297j1CCbERvVRP+7rv
++E4fyfMxcpg2sjCZZKnOMAGVleVpAPnU86o8ipVLVkcW7G3lk4i+n4FMqBvY8ryZfGUzvTAZm5ih
+gytJosOLNOCLjYQK+z+dlK6snjWItTbgR94xMfWTs4GnK7iZ/PIF7vFchb/wGijG9Y+mhMuzdiON
+VzHgvxALB0szHjCpAKRXZUttBmRk8SXcYA/kjfktNWrKTZtyYc8/mEldaSd+GFZrNxr59E87S7Qr
+9Mc+FRmEGhbaxv50k0ed9TyfDkRr32y2TY+/VyaVTGxaSmvNVjtrf6GTUs70igdnMem7p8+Lvs+S
+/xr54yzhZmiorPIofM1Tk4VZY6N2bTS+I0J48QV79vdo2MDO1wZi3ju9QcziekZlTwIx0U62AH2h
+fDKBwUGLMKCD/18ps8xmIUv/rnGoFdQz+oFtGm/X2DvNtUuSSwXuFq32N078z3zJPjdyT7JzElmD
+Bakezp6YKKcLUnKj+pVPB6jqsmzrGRFjQdTNcri6QynaCGFktclIDunF7fwbgsD78ozYUpSXfRr/
+U/so9rRiVmQMtYa0JpMOVz2nHBwlfUQeeSVNrD62TcS6GvUtlpBGK2jLqDPFHc69LKFa7GYzIcQZ
+oMYVbqPa2NhcKbhEzJTg5S1pWXHotIipB0XkM3S6YAii/xlrXEfE+q+5UyKBrfSqc+UVbvsBcUdL
+XPYKdb0SCMk0upexdx5M4KgIvDtiThgEDK/lbkUzP9h48ET6Ys+5IN8QR2OPrT4Vox4WWBLiUF9e
+3GezQFufxmAc+B+7XcCF0Sq2/xaE3dHD70VFYfRdDQYfTvWQTg30Akau9VTQkZ3ONgEDdDU5AXFz
+xwT/gGacqYqqp7lODAaxToGCtPO+0n1F4MMTkXd0kFu3G3HbjpQCEzB00VhkN2IJeXjVY1+BXpjN
+qyE/IXzzokefZW5axH+9Lk9nsC5rBOt7n5YImkzjT8jUJW6vcbqdfIqcoEvr9LKRzX4mJP2eD0GP
+SpjLT5YeH5p97osE1WYRY/6ZEl251VxFKE4D8hv60B42PuxUAgY5Ie8SVmQQdAv+GTQRS4R1WYIe
+SVaQp09bqcZzxhK1rjTiRLA4E2uv6Kioe+kUYWvf1xAf5kkHpI0A2P3h6MqWdaA1N/Gp6R9tE5t9
+/cfyqKcXxlf34Ie1yUTqWkNTX8Z/tRQZtuAIz405B3woxOb9UiOuqmVc3x+u2LbGv+GYqmP2mApE
+uvnJafu/opRSu9dsccbywfITmrmLFSK7zJ7SeQ8FQZ3y3WbKU4HSu5Ame6PyKFepwm3r+a5z+ZUl
+75ilQi1tWb9TObEFfU3Wxr3ZD6aECsoRTCwIB2Ml5duioJJNdu0wlxNfm3fIIlqNOZdK1NpGQBcT
+zziBCkANwEJjXNZyLUCDyGRsik1md2KRTg1upgrmWF63bea96hnBMDi7YbqG1t+9XUxbdTDK6c+w
+ghepnCwJ2iY+Bhvx682QKfrCsbBMIVNeLSsBwSuCPX3nEaWScKadPg7jqW1RM97D/djFkU5syfQv
+KxdtotJSiFu54HDPybAeADuf/4LJ9WgNhW7DRX8gGWAF866+fXF3YCzmrHMaUXVWxF45Cpr8Dyrg
+o+sr38gTpeXEL7hvTEPgAr/wZAomMSFYuHcwe5k04CKLGu36I76wPj/gnFSFVmTvvqSXzB/PoHFj
+6sV50g/0yCZEeH5xKvYRMlKYM52DUqWc1VCsT/xwR+ytR9OFJZzdXEVtGV/Ty9Ozah3Wtx1qkSE/
+xmhTbRDFCS/ijciqXxldU9mcM3kY7tx0JCHtldO4MoTnlCViMCZiQUCRAwPTC/EFkfiGL0LlJWSq
+1q5EiwfQcyIKA6JttOpx4BM49qV9jKN9HzJXRESiGjr5K6ilgtYrG8OnL3iYr3D72sto+VkXKrCw
+9d2EyB3fkqvlpnqti7XZa1bZgER+c/1EMajK4NPXWdzhNXd+a+k2akIHeTRz6DXGvJCUChXpVYSR
+Rkz4MILTr/7YXoXxI+hZidiOJWbK6hHhChUq9ku8VnM+pgJTcjPD+XbT2yBU26G28gJTc+fTDYVa
+VRLwtZLToMuWT7q1OsT7u27Q5p+so7A1enY8iHVAo4edVKYLNto63kUfU+vipcUWJW1DIyBvr0er
+f1oaNQwQV5YkG78pTeRkadcK2qVVc+h18s6eKABFyH3n5lbKbt+FjvgdIprQt3/BDATAwf95CcqT
+NWXz2si/5a6t30U84j6q2JOUrztABo61DzIeiE9+K82ez58kjYHp+y4ayqGLR3+gUYctjTSPmlnu
+RA7iPa2F66UbY/+7BhFG4erjtBGoQ1FStRE5w3VNQwX4wjF7J/Cr7JN5h9TP2qq1Z48f78x1UDOM
+lz9nwC3yDplxX3DBJTuL3dCmvKQaQNjfQseuAps8eej7BpNBZlAGfh5H5z8VdUpGW/Fl/gSLmFNV
+Z3fJXKU4usQHK5/OvZbV3wUzk+cgeUkqR1n0iVgATC3M3yxaPIBxAcd07nLLrf19JmtBQQBCr4Ys
+jDF0gjPFOFzruHl0Road2k+mzRbB2H1ojOX9zVefiKxafNQwMA4jgu1pCdv9q52SiI/tjQjsLxH/
+8cbt5OgA0DZQQkBOA18GILzFNQAbSPu7bEQsqPW6mO/J4G0uNj+lP4RMpfz+/wdHej1dtpVqaoIQ
+DZWX0odni6E8SKcMGEj4JeVscvcUClcmcTKFu7+2wwYIyQQzqYl60M0tL6kCXShaYGKxweJqp1sM
+tHKxMnCYayS0dFMOw+rv4kRJ7ydJio47UIdTe/KUmEBWaALnK+rKlvbTBsnHAY2kPWlqQIgs91vF
+9FpKgQ76JFUGJerjL1MYgYD8QDjTgL1QzmQSkg/oMiLl2GHL/+8DyYuTNndNy6lcKvxC9b17v111
+bsirO8cDrc2ESCBRjEtEvZw3QfV9r10/+pW04Khziv0RIvv8JH+/6G1em3VjhCRuc3RJ2T0dr50s
+XzAC7TPJGGK0RoAjpZ0ak+GVUoQomgih3bP54erGqKh4ts9P6EFe+q6RnkpouLCBt8EUf27GFSyQ
+ddfiM7Qnv//P19S02yiz86SdR9ifJB3/nSxF5h2pA5H8lbQHgtLY6pL22jeGaIg4rd0fn/QG1xA0
++ccQ/EdHXfnidUsCLkdxNKAJkedszDDH4wuY8KHYrHP+uMLzk+nNW6rNfxSXOHIys086/vrVgk+B
+xF9LV5IpSoZMCkQHOZZtbSFPWqqQKmV2W6JM68YEn+sy3gu8AmjAGXgkl0oh8QaWlJ0Nc/I4iRPA
+1uu0kGNdLFq/rMoIX7zA9v2WUqkdGcribLgpQNEfwXfxgT+BROZYp5k6Fy8orxWq1ZuAVrWIij37
+UQvUS0UoumcgHlB5ohRn3gBaVcKe6ZjWRgXYvk2X/r4dxV/MjYAMq7AXZXkyDQvbpMT0cpPKR9d0
+wTboTZJXKvm9vmmkBwux5NNfkzhMyxi0r+zVvYvtWQ3QFxhI5M+5Sjb+RQYwc2v1uZMzdOZU2oWr
+rkruHJ97fiiHiTxdBSSIKGHoTxkGp7QalaIJ30/C/5/7TyHplXotEl+EXPcpbR2pAMaw8J/vukxC
+D9fXKWkhwuB1q0yXyXyqsv4viWbp491kd98zTdMZbIZ7CijJxtjA70oLmooE0Ctjd/1eYhfkJJ7t
+jy2yErZKiYDZEvZc53Xp0G/mR9/hOrUrBlZvsM05fKclgnMPon0t/Xr9LECrXXuhjJ2zJsfx0Ogt
+7FmN1KH3LVTn8keNkcVqeAdhNfXeSEjxO1QUSv34mCvad2J0441WI9uXK+oeiAxUC3j6RSPPliGv
+nZXNGySWKpZRUtlZwApQ1zdydupJTirIC5zGNkuQbYew6Zs3MCnrlLRj+s87y1SMR3wA9WdkW+kf
+an9b3bp92uR7oZ44r0bdzoDlo5yX4gI3ea7yn20m0FthKfoAOVK4usDTFy8RvnQSkrZZDZcZPJW0
+Tu2SJ/NIoskpSEorlFNKZjCSqNJEaOH2Q8GFIWp96mWtx+qT3EX2TfcSc/WgjbCg7cpMw+Do+TPH
+Cj8OlxNZq3SBImX+ma11pGPS8118OnRXrNOUxfs15SgExEGt5JKdEr9C99dajegMt+tLdSYe1CWg
+HTElpQM6849CpwCaJTomD0+xCJTalE6YQ/bywqd25DgnBggWjpiL4rk6ryY6wyOpfJ6Fr4ouXAKU
+AXI2oS0hq9S48eZHtIp5xoWrY8Iw9dnq4MYFbs/6U4x7BBJ/CNbplEkGcbQ8hUItoJEAHKFaCKnE
+iEegsqmoYH55QaaHy7LNNNw/FNNgsevhGcriHONGOB4tWKrszIqPlG1trTuIaU58RvLZ2ZLmeuru
+sojjaOQ4Fzf2gc/OKD0DrCU4bnSwKeqpJxBT5zeCLP5bjVs5IIg/O1RbIkdlURdag7yrzCwjUkbB
+XlsoMb5n6DU9a9QL3NOo/bSIf67LcKILCeOjGtPYrE2gYDndEZITUh7lovjRPJWs63SqMz2FSPNM
++5upZRCXvY63ixF4iwI+jRJvqXI1CTPPOraEAeFJ6iRx8sFoNQntrU96TDAladAtmkoESRszYRpj
+hJsZxe8objUfGtXra2pvjqsq0MmSzOmCxiQaFhHwpgwF039/Koa60g6z+ksBH5XO4+EADWzI1Haw
+HGUXYUMJ6Fc0dLc3I24+CQCH026BagbF6/D89JFos6aHHXsoRofTLN8afdgFPyXcaV11VEgtG8HI
+NL3coAnhsx881koW7bs1mMcIY98g9yK/cJ/+rgb/OTlSoN5aVEJ3WYAU5LUc2bIvhHkUradPgIFh
+eHFnivrxDmxVa13szLSDoiNvOncSKaH7pu5qTfdBa0jwESAx6FUFo/C5y8r9DehRVHzZFHjYuD2Y
+oS4el3ipKdRkOr0DZRR3Asg8uypf3rNk12OfK2FGanzn0vra9HVeH/L3ivmHRaSYfERJUnzkatWo
+prSijqbb02bv8IB3BqPCCa3ZlMXC3fZpzcJQJOUE9wZjMwwvJY+wl0bIgis50LrhpKaO2wPYFiVg
+frAVvlW7dne1sbm5OECbpQdNsn4eZMn4Q+NcHTi6/CM9RUrt5gK+Wpd1qW0Wqh80H5IVDrWkZhAK
+dTd1emHUkqnz5WxLp8VeNBW5CwihfbF/dj7cv+hzWoXCp/bkepSXxPqR49Xb4H824xxUwtPafVZH
+d7JGChQGuJIh2FKDJ0==

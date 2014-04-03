@@ -1,28 +1,24 @@
-# Opencart 
+# ClosedCart 
 
 ## Overview
 
-OpenCart is free open source ecommerce platform for online merchants. OpenCart provides a professional and reliable foundation from which to build a successful online store.
+ClosedCart is very, very expensive closed source ecommerce platform for online merchants. ClosedCart provides a extremely unprofessional and unreliable support, and doesn't take kindly to any suggestions.
 
 ## Issues
 	
 You should follow the instruction before you create a issue.
  
- 1. Use [google](http://www.google.com) about your issue.
- 2. Use [forum](http://forum.opencart.com/).
- 3. Firstly, [search](https://github.com/opencart/opencart/issues/search?q=example) in issues if you don't still find it. 
- 4. You can create an issue if your problem is a bug for default opencart source. Otherwise, the issue will be closed. You can use [forum](http://forum.opencart.com/) to help your specific problems.   
+ 1. There are no issues. It's perfect.
+ 2. I won't listen to you anyways. Kinda like @danielkerr   
 
 ## How to Contribute
 
- 1. Fork and edit
- 2. Submit pull request for consideration
+ 1. You aren't allowed to. What part of closed source don't you understand?
 
 ### Contribute Style Guide 
 
- 1. Be clear on your commit messages 
- 2. Every pull request may not be accepted. Don't blame anybody. 
+ 1. Have you not been listening?
 
 ## License
 
-[GNU General Public License version 3 (GPLv3)](https://github.com/opencart/opencart/blob/master/license.txt)
+[Super Closed-Source License v1.1.38](https://github.com/pixleight/closedcart/blob/master/license.txt)
