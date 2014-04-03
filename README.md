@@ -22,3 +22,9 @@ You should follow the instruction before you create a issue.
 ## License
 
 [Super Closed-Source License v1.1.38](https://github.com/pixleight/closedcart/blob/master/license.txt)
+
+## Really?
+
+Of course not. This is simply a parody, based on the troubles surrounding https://github.com/opencart/opencart/issues/1286.
+
+Properly license your code, kids.
